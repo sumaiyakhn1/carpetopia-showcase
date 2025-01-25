@@ -6,19 +6,16 @@ const categories = [
     title: "carpet style 1",
     subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
-    type: "Abstract"
   },
   {
     title: "carpet style 2",
     subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
-    type: "Modern"
   },
   {
     title: "carpet style 3",
     subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
-    type: "Oriental"
   },
 ];
 
@@ -49,14 +46,7 @@ export const Categories = () => {
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category, index) => (
-            <div 
-              key={index} 
-              className={`group cursor-pointer space-y-4 transition-all duration-500 ${
-                activeFilter === category.type 
-                  ? "scale-105 z-10" 
-                  : "blur-[2px] hover:blur-none"
-              }`}
-            >
+            <div key={index} className="group cursor-pointer space-y-4">
               <div className="relative overflow-hidden rounded-lg">
                 <img
                   src={category.image}
