@@ -1,43 +1,79 @@
-import { Card, CardContent } from "./ui/card";
+import { useState } from "react";
+import { Button } from "./ui/button";
 
 const categories = [
   {
-    title: "Persian",
+    title: "carpet style 1",
+    subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
+    type: "Abstract"
   },
   {
-    title: "Modern",
+    title: "carpet style 2",
+    subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
+    type: "Modern"
   },
   {
-    title: "Traditional",
+    title: "carpet style 3",
+    subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
-  },
-  {
-    title: "Contemporary",
-    image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
+    type: "Oriental"
   },
 ];
 
+const filters = ["Abstract", "Modern", "Oriental"];
+
 export const Categories = () => {
+  const [activeFilter, setActiveFilter] = useState("Abstract");
+
   return (
-    <section className="py-20">
+    <section className="py-20 bg-[#FAF9F6]">
       <div className="container mx-auto px-4">
-        <h2 className="font-playfair text-4xl text-center mb-12">Our Collections</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <h2 className="font-playfair text-4xl text-center mb-12">OUR COLLECTION</h2>
+        
+        {/* Filters */}
+        <div className="flex justify-center gap-4 mb-12">
+          {filters.map((filter) => (
+            <Button
+              key={filter}
+              variant={activeFilter === filter ? "default" : "secondary"}
+              onClick={() => setActiveFilter(filter)}
+              className="rounded-full px-6"
+            >
+              {filter}
+            </Button>
+          ))}
+        </div>
+
+        {/* Categories Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category, index) => (
-            <Card key={index} className="group cursor-pointer overflow-hidden">
-              <CardContent className="p-0 relative">
+            <div 
+              key={index} 
+              className={`group cursor-pointer space-y-4 transition-all duration-500 ${
+                activeFilter === category.type 
+                  ? "scale-105 z-10" 
+                  : "blur-[2px] hover:blur-none"
+              }`}
+            >
+              <div className="relative overflow-hidden rounded-lg">
                 <img
                   src={category.image}
                   alt={category.title}
                   className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 className="font-playfair text-2xl text-white">{category.title}</h3>
+              </div>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-playfair text-xl">{category.title}</h3>
+                  <p className="text-gray-600">{category.subtitle}</p>
                 </div>
-              </CardContent>
-            </Card>
+                <div className="w-8 h-8 rounded-full border flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
+                  →
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
