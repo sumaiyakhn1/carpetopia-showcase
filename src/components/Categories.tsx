@@ -1,69 +1,43 @@
-import { useState } from "react";
-import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
 
 const categories = [
   {
-    title: "carpet style 1",
-    subtitle: "Explore Now!",
+    title: "Persian",
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
   },
   {
-    title: "carpet style 2",
-    subtitle: "Explore Now!",
+    title: "Modern",
     image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
   },
   {
-    title: "carpet style 3",
-    subtitle: "Explore Now!",
+    title: "Traditional",
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
+  },
+  {
+    title: "Contemporary",
+    image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
   },
 ];
 
-const filters = ["Abstract", "Modern", "Oriental"];
-
 export const Categories = () => {
-  const [activeFilter, setActiveFilter] = useState("Abstract");
-
   return (
-    <section className="py-20 bg-[#FAF9F6]">
+    <section className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="font-playfair text-4xl text-center mb-12">OUR COLLECTION</h2>
-        
-        {/* Filters */}
-        <div className="flex justify-center gap-4 mb-12">
-          {filters.map((filter) => (
-            <Button
-              key={filter}
-              variant={activeFilter === filter ? "default" : "secondary"}
-              onClick={() => setActiveFilter(filter)}
-              className="rounded-full px-6"
-            >
-              {filter}
-            </Button>
-          ))}
-        </div>
-
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="font-playfair text-4xl text-center mb-12">Our Collections</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {categories.map((category, index) => (
-            <div key={index} className="group cursor-pointer space-y-4">
-              <div className="relative overflow-hidden rounded-lg">
+            <Card key={index} className="group cursor-pointer overflow-hidden">
+              <CardContent className="p-0 relative">
                 <img
                   src={category.image}
                   alt={category.title}
                   className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-playfair text-xl">{category.title}</h3>
-                  <p className="text-gray-600">{category.subtitle}</p>
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <h3 className="font-playfair text-2xl text-white">{category.title}</h3>
                 </div>
-                <div className="w-8 h-8 rounded-full border flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
-                  →
-                </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
