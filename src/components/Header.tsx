@@ -2,11 +2,11 @@ import { Mail } from "lucide-react";
 
 export const Header = () => {
   return (
-    <div className="bg-black text-white py-2 px-4 overflow-hidden">
-      <div className="container mx-auto relative">
-        <div className="flex items-center space-x-2 animate-slide-email whitespace-nowrap">
+    <div className="bg-black text-white py-2 px-4">
+      <div className="container mx-auto flex justify-end items-center">
+        <div className="flex items-center space-x-2">
           <Mail className="h-4 w-4" />
-          <span>email@gmail.com</span>
+          <span className="animate-rotate-email">email@gmail.com</span>
         </div>
       </div>
     </div>
