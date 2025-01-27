@@ -15,13 +15,13 @@ export const Navigation = () => {
   ];
 
   return (
-   <div>
+    <div className="absolute top-0 left-0 right-0 z-20">
       {/* Top Email Bar */}
       <div className="w-full bg-black text-white py-1 text-center text-sm">
         Contact Us At rugartcreations@gmail.com
       </div>
 
-      <nav className="w-full bg-transparent">
+      <nav className="w-full">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center py-4">
             {/* Logo Section */}
