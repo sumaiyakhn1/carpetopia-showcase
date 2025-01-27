@@ -15,11 +15,7 @@ export const Navigation = () => {
   ];
 
   return (
-    <div className="w-full">
-      {/* Top Email Bar */}
-      <div className="w-full bg-black text-white py-1 text-center text-sm">
-        Contact Us At rugartcreations@gmail.com
-      </div>
+   <div>
 
       <nav className="w-full bg-black/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
