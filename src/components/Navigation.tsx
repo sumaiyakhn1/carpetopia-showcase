@@ -16,8 +16,12 @@ export const Navigation = () => {
 
   return (
    <div>
+      {/* Top Email Bar */}
+      <div className="w-full bg-black text-white py-1 text-center text-sm">
+        Contact Us At rugartcreations@gmail.com
+      </div>
 
-      <nav className="w-full bg-black/80 backdrop-blur-sm">
+      <nav className="w-full bg-black/20 backdrop-blur-[2px]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center py-4">
             {/* Logo Section */}
