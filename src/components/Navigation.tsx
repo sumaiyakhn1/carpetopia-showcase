@@ -26,7 +26,13 @@ export const Navigation = () => {
           <div className="flex flex-col items-center py-4">
             {/* Logo Section */}
             <div className="w-full md:w-auto flex justify-between items-center mb-4 md:mb-6">
-              <h1 className="text-3xl font-playfair font-bold text-white">RUG ART CREATIONS</h1>
+              <div className="flex items-center gap-4">
+                {/* Logo Space */}
+                <div className="w-12 h-12 bg-transparent border-2 border-white rounded flex items-center justify-center">
+                  <span className="text-white text-xs">Logo</span>
+                </div>
+                <h1 className="text-3xl font-playfair font-bold text-white">RUG ART CREATIONS</h1>
+              </div>
               
               {/* Mobile Menu Button */}
               <Button
