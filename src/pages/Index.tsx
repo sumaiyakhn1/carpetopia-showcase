@@ -5,7 +5,6 @@ import { About } from "@/components/About";
 import { Video } from "@/components/Video";
 import { CertificatesEvents } from "@/components/CertificatesEvents";
 import { Categories } from "@/components/Categories";
-import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -19,7 +18,6 @@ const Index = () => {
         <CertificatesEvents />
         <Categories />
       </main>
-      <Footer />
     </div>
   );
 };
