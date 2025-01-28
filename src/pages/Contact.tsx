@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const Contact = () => {
   return (
@@ -49,7 +50,7 @@ const Contact = () => {
                     <Mail className="h-6 w-6" />
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-gray-600">contact@luxecarpets.com</p>
+                      <p className="text-gray-600">rugartcreations@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -73,6 +74,7 @@ const Contact = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
