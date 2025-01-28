@@ -1,22 +1,20 @@
-import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
-import { Mail, Phone, MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   return (
     <div className="min-h-screen">
-      <Header />
       <Navigation />
-      <main>
+      <main className="pt-32">
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h1 className="font-playfair text-4xl text-center mb-12">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-playfair text-center mb-12">Contact Us</h1>
             
-            <div className="grid md:grid-cols-2 gap-12">
+            <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               {/* Contact Form */}
               <div className="space-y-6">
-                <h2 className="font-playfair text-2xl">Send us a message</h2>
+                <h2 className="text-2xl font-playfair">Send us a message</h2>
                 <form className="space-y-4">
                   <input
                     type="text"
@@ -44,7 +42,7 @@ const Contact = () => {
 
               {/* Contact Information */}
               <div className="space-y-8">
-                <h2 className="font-playfair text-2xl">Get in touch</h2>
+                <h2 className="text-2xl font-playfair">Get in touch</h2>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
                     <Mail className="h-6 w-6" />
