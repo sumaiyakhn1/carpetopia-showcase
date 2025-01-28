@@ -8,9 +8,9 @@ export const Navigation = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "In House Production", path: "/production" },
-    { name: "Collections", path: "/collections" },
-    { name: "Events", path: "/events" },
+    { name: "In House Production", path: "#production" },
+    { name: "Collections", path: "#collections" },
+    { name: "Events", path: "#events" },
     { name: "Contact Us", path: "/contact" }
   ];
 

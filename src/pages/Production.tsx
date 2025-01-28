@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
@@ -6,30 +7,31 @@ const Production = () => {
     {
       title: "Design Consultation",
       description: "Our expert designers work closely with clients to understand their vision and requirements, creating custom designs that perfectly match their aesthetic preferences.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80"
+      image: "/placeholder.svg"
     },
     {
       title: "Material Selection",
       description: "We source the finest materials including premium wool, silk, and natural fibers to ensure exceptional quality and durability in every piece.",
-      image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80"
+      image: "/placeholder.svg"
     },
     {
       title: "Hand Knotting",
       description: "Our skilled artisans meticulously hand-knot each carpet, maintaining traditional techniques while incorporating modern design elements.",
-      image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80"
+      image: "/placeholder.svg"
     },
     {
       title: "Quality Control",
       description: "Each piece undergoes rigorous quality checks throughout the production process to ensure it meets our high standards of excellence.",
-      image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80"
+      image: "/placeholder.svg"
     }
   ];
 
   return (
     <div className="min-h-screen">
+      <Header />
       <Navigation />
-      <main className="pt-32">
-        <section className="py-20">
+      <main>
+        <section className="relative py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-playfair text-center mb-12">
               Our In-House Production Process
@@ -63,7 +65,7 @@ const Production = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-playfair text-center mb-12">
               Why Choose Our In-House Production?
