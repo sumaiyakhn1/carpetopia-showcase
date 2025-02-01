@@ -40,8 +40,20 @@ const Production = () => {
             </h1>
             
             <div className="relative">
-              {/* Decorative rope line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-300 to-amber-600 transform -translate-x-1/2" />
+              {/* Enhanced rope design */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-[3px] transform -translate-x-1/2">
+                {/* Main rope body */}
+                <div className="absolute inset-0 bg-gradient-to-b from-amber-700 via-amber-500 to-amber-700"></div>
+                
+                {/* Texture overlay */}
+                <div className="absolute inset-0 opacity-30 bg-[repeating-linear-gradient(45deg,transparent,transparent_2px,#000_2px,#000_4px)]"></div>
+                
+                {/* Highlight */}
+                <div className="absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-amber-200 via-transparent to-amber-200 opacity-50"></div>
+                
+                {/* Shadow */}
+                <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-amber-900 via-transparent to-amber-900 opacity-50"></div>
+              </div>
               
               {/* Production steps */}
               {productionSteps.map((step, index) => (
@@ -57,8 +69,15 @@ const Production = () => {
                     <p className="text-gray-600">{step.description}</p>
                   </div>
                   
-                  {/* Circle connector */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-amber-500 rounded-full" />
+                  {/* Enhanced connector node */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6">
+                    {/* Outer circle */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg"></div>
+                    {/* Inner circle */}
+                    <div className="absolute inset-[2px] rounded-full bg-gradient-to-br from-amber-300 to-amber-500"></div>
+                    {/* Highlight */}
+                    <div className="absolute inset-[4px] rounded-full bg-gradient-to-br from-amber-200 to-transparent opacity-50"></div>
+                  </div>
                   
                   {/* Image */}
                   <div className="w-1/2">
