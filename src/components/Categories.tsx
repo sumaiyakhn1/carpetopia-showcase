@@ -3,19 +3,19 @@ import { Button } from "./ui/button";
 
 const categories = [
   {
-    title: "carpet style 1",
+    title: "Abstract",
     subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
     type: "Abstract"
   },
   {
-    title: "carpet style 2",
+    title: "Modern",
     subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
     type: "Modern"
   },
   {
-    title: "carpet style 3",
+    title: "Oriental",
     subtitle: "Explore Now!",
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
     type: "Oriental"
