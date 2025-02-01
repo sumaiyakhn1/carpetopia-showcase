@@ -41,6 +41,7 @@ const Production = () => {
             
             <div className="relative">
               {/* Enhanced rope design */}
+             
               <div className="absolute left-1/2 top-0 bottom-0 w-[3px] transform -translate-x-1/2">
                 {/* Main rope body */}
                 <div className="absolute inset-0 bg-gradient-to-b from-amber-700 via-amber-500 to-amber-700"></div>
