@@ -10,7 +10,7 @@ const Contact = () => {
       <Header />
       <Navigation />
       <main>
-        <Carousel />
+        <Carousel height="400px" />
         <section className="py-20">
           <div className="container mx-auto px-4">
             <h1 className="font-playfair text-4xl text-center mb-12">Contact Us</h1>

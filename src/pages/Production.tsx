@@ -32,7 +32,7 @@ const Production = () => {
       <Header />
       <Navigation />
       <main>
-        <Carousel />
+        <Carousel height="400px" />
         <section className="relative py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-playfair text-center mb-12">

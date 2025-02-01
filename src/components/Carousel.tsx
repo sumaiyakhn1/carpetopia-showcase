@@ -20,7 +20,11 @@ const slides = [
   },
 ];
 
-export const Carousel = () => {
+interface CarouselProps {
+  height?: string;
+}
+
+export const Carousel = ({ height = "600px" }: CarouselProps) => {
   const [current, setCurrent] = useState(0);
 
   const next = () => setCurrent((current + 1) % slides.length);
@@ -32,7 +36,7 @@ export const Carousel = () => {
   }, [current]);
 
   return (
-    <div className="relative h-[600px] overflow-hidden">
+    <div className={`relative overflow-hidden`} style={{ height }}>
       {slides.map((slide, index) => (
         <div
           key={index}
