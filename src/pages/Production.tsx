@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
+import { Carousel } from "@/components/Carousel";
 import { Footer } from "@/components/Footer";
 
 const Production = () => {
@@ -31,6 +32,7 @@ const Production = () => {
       <Header />
       <Navigation />
       <main>
+        <Carousel />
         <section className="relative py-20 bg-gray-50">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-playfair text-center mb-12">
@@ -61,34 +63,6 @@ const Production = () => {
                   <p className="text-gray-600">{step.description}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-playfair text-center mb-12">
-              Why Choose Our In-House Production?
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <h3 className="text-xl font-playfair mb-4">Quality Control</h3>
-                <p className="text-gray-600">
-                  Direct oversight of every production stage ensures consistent quality.
-                </p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-playfair mb-4">Customization</h3>
-                <p className="text-gray-600">
-                  Complete control over the design and production process allows for unlimited customization options.
-                </p>
-              </div>
-              <div className="text-center">
-                <h3 className="text-xl font-playfair mb-4">Craftsmanship</h3>
-                <p className="text-gray-600">
-                  Our skilled artisans bring decades of experience to every piece they create.
-                </p>
-              </div>
             </div>
           </div>
         </section>
