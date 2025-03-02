@@ -8,19 +8,19 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="font-playfair text-xl font-semibold">Rug Art Creations</h3>
+            <h3 className="font-playfair text-xl font-semibold">Dream Knot Creations</h3>
             <p className="text-gray-300">Crafting luxury carpets with passion and precision since 1995.</p>
             <div className="flex items-center gap-2">
               <Mail className="h-5 w-5" />
-              <span>rugartcreations@gmail.com</span>
+              <span>dreamknotcreations7@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5" />
-              <span>+1 (555) 123-4567</span>
+              <span>+917521808417</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5" />
-              <span>123 Carpet Lane, Design District</span>
+              <span>Goriyana Mohallah, Bhadohi,UP</span>
             </div>
           </div>
 
@@ -54,7 +54,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Rug Art Creations. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Dream Knot Creations. All rights reserved.</p>
         </div>
       </div>
     </footer>

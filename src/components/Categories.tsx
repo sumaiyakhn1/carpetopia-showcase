@@ -1,24 +1,28 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
     title: "Abstract",
     subtitle: "Explore Now!",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
-    type: "Abstract"
+    image: "/carpet/abstract/ab1.jpg",
+    type: "Abstract",
+    link: "/collections",
   },
   {
     title: "Modern",
     subtitle: "Explore Now!",
-    image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
-    type: "Modern"
+    image: "/carpet/modern/md1.jpg",
+    type: "Modern",
+    link: "/collections",
   },
   {
     title: "Oriental",
     subtitle: "Explore Now!",
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
-    type: "Oriental"
+    image: "/carpet/oriental/or1.jpg",
+    type: "Oriental",
+    link: "/collections",
   },
 ];
 
@@ -49,31 +53,35 @@ export const Categories = () => {
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category, index) => (
-            <div 
+            <Link 
+              to={category.link} 
               key={index} 
-              className={`group cursor-pointer space-y-4 transition-all duration-500 ${
-                activeFilter === category.type 
-                  ? "scale-105 z-10" 
-                  : "blur-[2px] hover:blur-none"
-              }`}
+              className="block"
+              onMouseEnter={() => setActiveFilter(category.type)} // Change filter on hover
             >
-              <div className="relative overflow-hidden rounded-lg">
-                <img
-                  src={category.image}
-                  alt={category.title}
-                  className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-playfair text-xl">{category.title}</h3>
-                  <p className="text-gray-600">{category.subtitle}</p>
+              <div
+                className={`group cursor-pointer space-y-4 transition-all duration-500 ${
+                  activeFilter === category.type ? "scale-105 z-10" : "blur-[2px] hover:blur-none"
+                }`}
+              >
+                <div className="relative overflow-hidden rounded-lg">
+                  <img
+                    src={category.image}
+                    alt={category.title}
+                    className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <div className="w-8 h-8 rounded-full border flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
-                  →
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="font-playfair text-xl">{category.title}</h3>
+                    <p className="text-gray-600">{category.subtitle}</p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full border flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors">
+                    →
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

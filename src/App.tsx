@@ -8,6 +8,10 @@ import Contact from "./pages/Contact";
 import Production from "./pages/Production";
 import Collections from "./pages/Collections";
 import Events from "./pages/Events";
+import ModernCollection from "./pages/Modern";
+import ClassicCollection from "./pages/Abstract";
+import LuxuryCollection from "./pages/Oriental";
+
 
 const queryClient = new QueryClient();
 
@@ -22,6 +26,9 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/production" element={<Production />} />
           <Route path="/collections" element={<Collections />} />
+          <Route path="/collections/modern" element={<ModernCollection />} />
+          <Route path="/collections/abstract" element={<ClassicCollection />} />
+          <Route path="/collections/oriental" element={<LuxuryCollection />} />
           <Route path="/events" element={<Events />} />
         </Routes>
       </BrowserRouter>
