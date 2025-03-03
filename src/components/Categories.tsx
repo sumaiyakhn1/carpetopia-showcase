@@ -8,14 +8,14 @@ const categories = [
     subtitle: "Explore Now!",
     image: "/carpet/abstract/ab1.jpg",
     type: "Abstract",
-    link: "/collections",
+    link: "/collections/abstract",
   },
   {
     title: "Modern",
     subtitle: "Explore Now!",
     image: "/carpet/modern/md1.jpg",
     type: "Modern",
-    link: "/collections",
+    link: "/collections/modern",
   },
   {
     title: "Oriental",
