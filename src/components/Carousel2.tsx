@@ -5,18 +5,18 @@ import { Button } from "./ui/button";
 const slides = [
   {
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
-    title: "Luxury Indo-Tibbetan Carpets",
-    description: "Handcrafted excellence for your home",
+    title: "",
+    description: "",
   },
   {
     image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
-    title: "Prayer Collection",
-    description: "Contemporary designs for modern spaces",
+    title: "",
+    description: "",
   },
   {
     image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
-    title: "Traditional Elegance",
-    description: "Timeless patterns that tell stories",
+    title: "",
+    description: "",
   },
 ];
 

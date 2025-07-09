@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
-import { Carousel } from "@/components/Carousel";
+import { Carousel } from "@/components/Carousel2";
 import { Footer } from "@/components/Footer";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 

@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
-import { Carousel } from "@/components/Carousel";
+import { Carousel } from "@/components/Carousel2";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 
