@@ -18,21 +18,21 @@ const Collections = () => {
               <div className="space-y-4">
               <Link to="/collections/modern">
               <img src="/carpet/modern/md1.jpg" alt="Carpet Image" className="w-full h-[400px] object-cover rounded-lg" />
-              <h3 className="font-playfair text-xl">Modern Collection</h3>
+              <h3 className="font-playfair text-xl">Pile Durry Collection</h3>
                 <p className="text-gray-600">Contemporary designs for modern spaces</p>
                 </Link>
               </div>
               <div className="space-y-4">
               <Link to="/collections/abstract">
-              <img src="/carpet/abstract/ab1.jpg" alt="Carpet Image" className="w-full h-[400px] object-cover rounded-lg" />
-                <h3 className="font-playfair text-xl">Abstract Collection</h3>
+              <img src="/carpet/abstract/nab2.2.png" alt="Carpet Image" className="w-full h-[400px] object-cover rounded-lg" />
+                <h3 className="font-playfair text-xl">Prayer Mat Collection</h3>
                 <p className="text-gray-600">Timeless patterns and traditional motifs</p>
                 </Link>
               </div>
               <div className="space-y-4">
               <Link to="/collections/oriental">
               <img src="/carpet/oriental/or1.jpg" alt="Carpet Image" className="w-full h-[400px] object-cover rounded-lg" />
-                <h3 className="font-playfair text-xl">Oriental Collection</h3>
+                <h3 className="font-playfair text-xl">Indo-Tibbetan Collection</h3>
                 <p className="text-gray-600">Premium materials and exquisite craftsmanship</p>
                 </Link>
               </div>

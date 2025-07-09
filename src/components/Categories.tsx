@@ -4,29 +4,29 @@ import { Link } from "react-router-dom";
 
 const categories = [
   {
-    title: "Abstract",
+    title: "Prayer Mat",
     subtitle: "Explore Now!",
-    image: "/carpet/abstract/ab1.jpg",
-    type: "Abstract",
+    image: "/carpet/abstract/nab2.2.png",
+    type: "Prayer Mat",
     link: "/collections/abstract",
   },
   {
-    title: "Modern",
+    title: "Pile Durry",
     subtitle: "Explore Now!",
     image: "/carpet/modern/md1.jpg",
-    type: "Modern",
+    type: "Pile Durry",
     link: "/collections/modern",
   },
   {
-    title: "Oriental",
+    title: "Indo-Tibbetan",
     subtitle: "Explore Now!",
     image: "/carpet/oriental/or1.jpg",
-    type: "Oriental",
-    link: "/collections",
+    type: "Indo-Tibbetan",
+    link: "/collections/oriental",
   },
 ];
 
-const filters = ["Abstract", "Modern", "Oriental"];
+const filters = ["Prayer Mat", "Pile Durry", " Indo-Tibbetan"];
 
 export const Categories = () => {
   const [activeFilter, setActiveFilter] = useState("Abstract");

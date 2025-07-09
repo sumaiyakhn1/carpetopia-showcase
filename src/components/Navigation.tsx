@@ -35,9 +35,13 @@ export const Navigation = () => {
             <div className="w-full md:w-auto flex justify-between items-center mb-4 md:mb-6">
               <div className="flex items-center gap-4">
                 {/* Logo Space */}
-                <div className="w-12 h-12 bg-transparent border-2 border-white rounded flex items-center justify-center">
-                  <span className="text-white text-xs">Logo</span>
-                </div>
+                <div className="w-36 h-36 bg-transparent rounded flex items-center justify-center">
+  <img
+    src="/DKClogo.png"
+    alt="Logo"
+    className="w-full h-full object-contain"
+  />
+</div>
                 <Link to="/" className="text-3xl font-playfair font-bold text-white">
                   Dream Knot Creations
                 </Link>

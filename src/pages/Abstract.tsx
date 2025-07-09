@@ -20,7 +20,7 @@ const carpets = [
   {
     id: 2,
     name: "Classic Wool Rug",
-    price: "$299",
+    price: "70 x 110cm (27.5 x 43.3in)",
     images: [
       "/carpet/abstract/nab2.0.png",
       "/carpet/abstract/nab2.1.png",
@@ -31,9 +31,9 @@ const carpets = [
   {
     id: 3,
     name: "Vintage Moroccan",
-    price: "$399",
+    price: "70 x 110cm (27.5 x 43.3in)",
     images: [
-      "/carpet/abstract/nab3.0.jpeg",
+      "/carpet/abstract/nab3.0.png",
       "/carpet/abstract/nab3.1.png",
       "/carpet/abstract/nab3.2.png"
     ],
@@ -71,7 +71,11 @@ const Abstract = () => {
         <Carousel height="400px" />
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h1 className="font-playfair text-4xl text-center mb-12">Abstract Collections</h1>
+            <h1 className="font-playfair text-4xl text-center mb-12">Prayer Mat Collections</h1>
+            <p className="max-w-2xl mx-auto text-center text-gray-700 mb-8">
+      A prayer mat, is a piece of fabric used for prayers. 
+      It provides a clean space for worship and often features intricate patterns and symbolic designs that enhance the spiritual experience.
+    </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
               {carpets.map((carpet) => (
                 <CarpetCard key={carpet.id} carpet={carpet} onClick={() => openModal(carpet)} />
