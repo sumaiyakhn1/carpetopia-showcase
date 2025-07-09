@@ -11,16 +11,18 @@ import Collections from "./pages/Collections";
 import ModernCollection from "./pages/Modern";
 import ClassicCollection from "./pages/Abstract";
 import LuxuryCollection from "./pages/Oriental";
-
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+     
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
