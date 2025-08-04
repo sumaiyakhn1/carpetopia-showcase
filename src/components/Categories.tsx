@@ -6,23 +6,23 @@ const categories = [
   {
     title: "Prayer Mat",
     subtitle: "Explore Now!",
-    image: "/carpet/abstract/nab2.2.png",
+    image: "/carpet/prayer-rug/nab1.1.png",
     type: "Prayer Mat",
-    link: "/collections/abstract",
+    link: "/collections/prayer-mat",
   },
   {
     title: "Pile Durry",
     subtitle: "Explore Now!",
-    image: "/carpet/modern/md1.jpg",
+    image: "/carpet/pile-dhurry/md1.jpg",
     type: "Pile Durry",
-    link: "/collections/modern",
+    link: "/collections/pile-dhurry",
   },
   {
     title: "Indo-Tibbetan",
     subtitle: "Explore Now!",
-    image: "/carpet/oriental/or1.jpg",
+    image: "/carpet/indo-tibetan/md8.png",
     type: "Indo-Tibbetan",
-    link: "/collections/oriental",
+    link: "/collections/indo-tibetan",
   },
 ];
 
