@@ -3,6 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Carousel } from "@/components/Carousel2";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import Calendly from "@/components/calendly";
 
 const Contact = () => {
   return (
@@ -42,6 +43,7 @@ const Contact = () => {
                     Send Message
                   </button>
                 </form>
+                <Calendly />
               </div>
 
               {/* Contact Information */}

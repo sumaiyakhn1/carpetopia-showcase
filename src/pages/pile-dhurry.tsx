@@ -50,7 +50,7 @@ const rugs = [
     id: 8,
     name: "Urban Block Durry",
     price: "$999",
-    image: "/carpet/pile-dhurry/md8.png",
+    image: "/carpet/pile-dhurry/or1.jpg",
     description:
       "Showcasing an artistic layout of staggered blocks and brush strokes in greys and blues, this durry captures the raw elegance of urban architecture. The abstract pattern gives a structured yet freeform look, perfect for industrial, modern, or minimalist interiors seeking a bold statement piece.",
   },
@@ -58,7 +58,7 @@ const rugs = [
     id: 9,
     name: "Duststorm Fade Durry",
     price: "$1099",
-    image: "/carpet/pile-dhurry/md9.png",
+    image: "/carpet/pile-dhurry/or2.jpg",
     description:
       "With a dusty charcoal base and a distressed diamond grid fading across the surface, this durry brings a weathered, lived-in charm. The worn textures and dark palette create depth and character, ideal for rustic modern or bohemian-inspired spaces.",
   },
@@ -66,7 +66,7 @@ const rugs = [
     id: 10,
     name: "Midnight Star Durry",
     price: "$1199",
-    image: "/carpet/pile-dhurry/md10.png",
+    image: "/carpet/pile-dhurry/or3.jpg",
     description:
       "This durry features a unique star-like geometric pattern spread across a soft slate-grey backdrop. The interlinked star motif brings a sense of symmetry and rhythm while maintaining a calm, subdued tone—perfect for contemporary and transitional home décor.",
   },
@@ -74,7 +74,7 @@ const rugs = [
     id: 11,
     name: "Urban Fade Durry",
     price: "$1299",
-    image: "/carpet/pile-dhurry/md11.png",
+    image: "/carpet/pile-dhurry/or4.jpg",
     description:
       "A striking mix of faded navy, ash, and beige tones gives this durry a modern, weathered look. The abstract, vertical pattern resembles worn paint or city walls aged by time, delivering a raw, expressive edge that suits urban chic or industrial-style homes.",
   },
@@ -142,7 +142,7 @@ const Modern = () => {
                   <div className="p-4">
                     <h2 className="text-xl font-semibold">{rug.name}</h2>
                     <p className="text-sm mt-2 text-gray-700">{rug.description}</p>
-                    <p className="text-md mt-3 text-gray-800 font-bold">{rug.price}</p>
+                    {/* <p className="text-md mt-3 text-gray-800 font-bold">{rug.price}</p> */}
                   </div>
                 </div>
               ))}
