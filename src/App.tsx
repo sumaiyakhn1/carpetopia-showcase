@@ -8,9 +8,9 @@ import Contact from "./pages/Contact";
 // import Production from "./pages/Production";
 import Collections from "./pages/Collections";
 // import Events from "./pages/Events";
-import ModernCollection from "./pages/Modern";
-import ClassicCollection from "./pages/Abstract";
-import LuxuryCollection from "./pages/Oriental";
+import PileDhurrryCollection from "./pages/pile-dhurry";
+import PrayerMatCollection from "./pages/prayer-mat";
+import IndoTibetanCollection from "./pages/indo-tibetan";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -28,9 +28,9 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           {/* <Route path="/production" element={<Production />} /> */}
           <Route path="/collections" element={<Collections />} />
-          <Route path="/collections/modern" element={<ModernCollection />} />
-          <Route path="/collections/abstract" element={<ClassicCollection />} />
-          <Route path="/collections/oriental" element={<LuxuryCollection />} />
+          <Route path="/collections/pile-dhurry" element={<PileDhurrryCollection />} />
+          <Route path="/collections/prayer-mat" element={<PrayerMatCollection />} />
+          <Route path="/collections/indo-tibetan" element={<IndoTibetanCollection />} />
           {/* <Route path="/events" element={<Events />} /> */}
         </Routes>
       </BrowserRouter>

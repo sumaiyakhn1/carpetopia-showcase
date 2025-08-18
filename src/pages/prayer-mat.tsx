@@ -11,9 +11,9 @@ const carpets = [
     name: "Elegant Prayer Mat",
     price: "70 x 110cm (27.5 x 43.3in)",
     images: [
-      "/carpet/abstract/nab1.0.png",
-      "/carpet/abstract/nab1.1.png",
-      "/carpet/abstract/nab1.2.png"
+      "/carpet/prayer-rug/nab1.0.png",
+      "/carpet/prayer-rug/nab1.1.png",
+      "/carpet/prayer-rug/nab1.2.png"
     ],
     description:  "Handwoven prayer mat with intricate patterns, blending soft pastel hues and bold textures for a warm, inspiring space."
   },
@@ -22,9 +22,9 @@ const carpets = [
     name: "Classic Wool Rug",
     price: "70 x 110cm (27.5 x 43.3in)",
     images: [
-      "/carpet/abstract/nab2.0.png",
-      "/carpet/abstract/nab2.1.png",
-      "/carpet/abstract/nab2.2.png"
+      "/carpet/prayer-rug/nab2.0.png",
+      "/carpet/prayer-rug/nab2.1.png",
+      "/carpet/prayer-rug/nab2.2.png"
     ],
     description: "Premium wool rug with a cozy home feel and a timeless checkered pattern."
   },
@@ -33,9 +33,9 @@ const carpets = [
     name: "Vintage Moroccan",
     price: "70 x 110cm (27.5 x 43.3in)",
     images: [
-      "/carpet/abstract/nab3.0.png",
-      "/carpet/abstract/nab3.1.png",
-      "/carpet/abstract/nab3.2.png"
+      "/carpet/prayer-rug/nab3.0.png",
+      "/carpet/prayer-rug/nab3.1.png",
+      "/carpet/prayer-rug/nab3.2.png"
     ],
     description: "Authentic Moroccan carpet with vintage appeal."
   },

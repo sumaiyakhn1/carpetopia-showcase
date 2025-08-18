@@ -88,24 +88,22 @@ const Contact = () => {
                     <Mail className="h-6 w-6" />
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-gray-600">
-                        dreamknotcreations7@gmail.com
-                      </p>
+                      <p className="text-gray-600">rugartcreations@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <Phone className="h-6 w-6" />
                     <div>
                       <h3 className="font-semibold">Phone</h3>
-                      <p className="text-gray-600">+91 77030 33761</p>
+                      <p className="text-gray-600">+1 (555) 123-4567</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
                     <MapPin className="h-6 w-6" />
                     <div>
                       <h3 className="font-semibold">Address</h3>
-                      <p className="text-gray-600">Goriyana Mohallah, Bhadohi</p>
-                      <p className="text-gray-600">UP, 221401</p>
+                      <p className="text-gray-600">123 Carpet Lane, Design District</p>
+                      <p className="text-gray-600">New York, NY 10001</p>
                     </div>
                   </div>
                 </div>
