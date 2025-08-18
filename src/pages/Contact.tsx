@@ -105,7 +105,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold">Address</h3>
                       <p className="text-gray-600">Goriyana Mohallah, Bhadohi</p>
-                      <p className="text-gray-600">UP, 221401</p>
+                      <p className="text-gray-600">Uttar Pradesh, 221401</p>
                     </div>
                   </div>
                 </div>
