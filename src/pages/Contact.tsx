@@ -5,7 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Carousel } from "@/components/Carousel2";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
-import Calendly from "@/components/calendly";
+import Calendly from "@/components/Calendly";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
