@@ -16,7 +16,7 @@ export const Footer = () => {
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5" />
-              <span>+917521808417</span>
+              <span>+917703033761</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5" />
@@ -41,7 +41,7 @@ export const Footer = () => {
           </div>
 
           {/* Social Media */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h3 className="font-playfair text-xl font-semibold">Follow Us</h3>
             <div className="flex gap-4">
               <a href="#" className="hover:text-gray-300 transition-colors">
@@ -51,7 +51,7 @@ export const Footer = () => {
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Dream Knot Creations. All rights reserved.</p>

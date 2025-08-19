@@ -30,14 +30,14 @@ const carpets = [
   },
   {
     id: 3,
-    name: "Vintage Moroccan",
+    name: "Classic Prayer Rug",
     price: "70 x 110cm (27.5 x 43.3in)",
     images: [
       "/carpet/prayer-rug/nab3.0.png",
       "/carpet/prayer-rug/nab3.1.png",
       "/carpet/prayer-rug/nab3.2.png"
     ],
-    description: "Authentic Moroccan carpet with vintage appeal."
+    description: "Authentic Prayer Rug with vintage appeal."
   },
 
 ];
@@ -111,7 +111,7 @@ const CarpetCard = ({ carpet, onClick }) => {
       <img src={carpet.images[0]} alt={carpet.name} className="w-full h-50 object-cover rounded-md transition-all duration-500" />
       <h2 className="text-lg font-semibold mt-2">{carpet.name}</h2>
       <p className="text-sm font-semibold mt-2">{carpet.description}</p>
-      <p className="text-gray-600">{carpet.price}</p>
+      {/* <p className="text-gray-600">{carpet.price}</p> */}
     </div>
   );
 };

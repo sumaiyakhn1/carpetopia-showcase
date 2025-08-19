@@ -5,6 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { Carousel } from "@/components/Carousel2";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import Calendly from "@/components/calendly";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
@@ -77,6 +78,7 @@ const Contact = () => {
                     Send Message
                   </button>
                 </form>
+                <Calendly />
                 <span className="block text-sm text-gray-600">{result}</span>
               </div>
 
