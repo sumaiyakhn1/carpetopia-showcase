@@ -26,10 +26,10 @@ const categories = [
   },
 ];
 
-const filters = ["Prayer Mat", "Pile Durry", " Indo-Tibbetan"];
+const filters = ["Prayer Mat", "Pile Durry", "Indo-Tibbetan"]; // Removed the leading space
 
 export const Categories = () => {
-  const [activeFilter, setActiveFilter] = useState("Abstract");
+  const [activeFilter, setActiveFilter] = useState("Prayer Mat"); // Changed from "Abstract" to match your first filter
 
   return (
     <section className="py-20 bg-[#FAF9F6]">
