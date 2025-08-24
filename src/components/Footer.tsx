@@ -12,7 +12,7 @@ export const Footer = () => {
             <p className="text-gray-300">Crafting luxury carpets with passion and precision since 1995.</p>
             <div className="flex items-center gap-2">
               <Mail className="h-5 w-5" />
-              <span>dreamknotcreations7@gmail.com</span>
+              <span>naushad@dreamknotcreations.com</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5" />
