@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
+import { StickyMenu } from "@/components/StickyMenu";
 import { Carousel } from "@/components/Carousel";
 import { About } from "@/components/About";
 import { Video } from "@/components/Video";
@@ -12,6 +13,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <Navigation />
+      <StickyMenu />
       <main>
         <Carousel />
         <About />
