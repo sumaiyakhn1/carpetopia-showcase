@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link, useNavigate } from "react-router-dom";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 200);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -22,32 +32,32 @@ export const Navigation = () => {
   };
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-20">
-      {/* Top Email Bar */}
-      <div className="w-full bg-black text-white py-1 text-center text-sm">
-        Contact Us At dreamknotcreations7@gmail.com
-      </div>
+    <>
+      {/* Header Section - Scrolls Away */}
+      <div className="relative z-20">
+        {/* Top Email Bar */}
+        <div className="w-full bg-black text-white py-1 text-center text-sm">
+          Contact Us At dreamknotcreations7@gmail.com
+        </div>
 
-      <nav className="w-full">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center py-4">
-            {/* Logo Section */}
-            <div className="w-full md:w-auto flex justify-between items-center mb-4 md:mb-6">
+        {/* Logo Section */}
+        <div className="w-full bg-black/20 backdrop-blur-sm">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-between items-center py-4">
               <div className="flex items-center gap-4">
-                {/* Logo Space */}
                 <div className="w-36 h-36 bg-transparent rounded flex items-center justify-center">
-  <img
-    src="/DKClogo.png"
-    alt="Logo"
-    className="w-full h-full object-contain"
-  />
-</div>
+                  <img
+                    src="/DKClogo.png"
+                    alt="Logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
                 <Link to="/" className="text-3xl font-playfair font-bold text-white">
                   Dream Knot Creations
                 </Link>
               </div>
               
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Button - Always Visible */}
               <Button
                 variant="ghost"
                 className="md:hidden text-white"
@@ -56,9 +66,25 @@ export const Navigation = () => {
                 <Menu className="h-6 w-6" />
               </Button>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sticky Navigation Menu */}
+      <nav className={`fixed top-0 left-0 right-0 z-30 transition-all duration-300 ${
+        isScrolled 
+          ? 'translate-y-0 bg-black/95 backdrop-blur-sm shadow-lg' 
+          : '-translate-y-full'
+      }`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between py-4">
+            {/* Logo for sticky nav */}
+            <Link to="/" className="text-xl font-playfair font-bold text-white">
+              DKC
+            </Link>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-12">
+            <div className="hidden md:flex space-x-8">
               {navItems.map((item) => (
                 <button
                   key={item.name}
@@ -74,23 +100,34 @@ export const Navigation = () => {
               ))}
             </div>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-              <div className="md:hidden w-full py-4 space-y-4 bg-black/90 mt-4 rounded-lg animate-fade-in">
-                {navItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => handleNavigation(item.path)}
-                    className="block w-full text-white hover:text-gray-300 transition-colors px-4 py-2 text-center"
-                  >
-                    {item.name}
-                  </button>
-                ))}
-              </div>
-            )}
+            {/* Mobile Menu Button for sticky nav */}
+            <Button
+              variant="ghost"
+              className="md:hidden text-white"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
           </div>
         </div>
       </nav>
-    </div>
+
+      {/* Mobile Menu - Fixed Position */}
+      {isOpen && (
+        <div className="fixed top-16 left-0 right-0 z-40 md:hidden bg-black/95 backdrop-blur-sm mx-4 rounded-lg animate-fade-in">
+          <div className="py-4 space-y-2">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleNavigation(item.path)}
+                className="block w-full text-white hover:text-gray-300 transition-colors px-4 py-3 text-center hover:bg-white/10 rounded"
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
