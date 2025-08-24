@@ -1,19 +1,29 @@
 import React from "react";
-import { PopupButton } from "react-calendly";
 
 const Calendly = () => {
   return (
-    <div className="calendly-container">
-      <PopupButton
-        url="https://calendly.com/dreamknotcreations7/30min"
-        /*
-         * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-         * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-         */
-        rootElement={document.getElementById("root")}
-        text="Book a Free Consultation"
-      />
-    </div>
+    <section className="text-center py-10">
+      {/* Main Heading */}
+      <h2 className="text-xl font-semibold mb-2">
+        Ready to discuss your project?
+      </h2>
+
+      {/* Subtext for clarity */}
+      <p className="text-gray-600 mb-6">
+        Schedule a free 30-minute consultation call to share your ideas and
+        explore how we can work together — no hassle, no commitment.
+      </p>
+
+      {/* Black Button */}
+      <a
+        href="https://calendly.com/dreamknotcreations7/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-6 py-3 bg-black text-white font-medium rounded-full shadow-md hover:bg-gray-800 transition duration-300 inline-block"
+      >
+        Book a Free Consultation
+      </a>
+    </section>
   );
 };
 

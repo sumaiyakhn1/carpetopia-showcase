@@ -4,17 +4,17 @@ import { Button } from "./ui/button";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
+    image: "/carousalimg1.avif",
     title: "",
     description: "",
   },
   {
-    image: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&q=80",
+    image: "carousalimg2.avif",
     title: "",
     description: "",
   },
   {
-    image: "https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&q=80",
+    image: "carousalimg3.jpg",
     title: "",
     description: "",
   },

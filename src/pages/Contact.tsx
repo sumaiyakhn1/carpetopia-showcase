@@ -78,10 +78,10 @@ const Contact = () => {
                     Send Message
                   </button>
                 </form>
-                <Calendly />
+                
                 <span className="block text-sm text-gray-600">{result}</span>
               </div>
-
+              
               {/* Contact Information */}
               <div className="space-y-8">
                 <h2 className="font-playfair text-2xl">Get in touch</h2>
@@ -91,7 +91,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold">Email</h3>
                       <p className="text-gray-600">
-                        dreamknotcreations7@gmail.com
+                      naushad@dreamknotcreations.com 
                       </p>
                     </div>
                   </div>
@@ -114,6 +114,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
+          <Calendly />
         </section>
       </main>
       <Footer />

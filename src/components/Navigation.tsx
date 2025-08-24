@@ -25,7 +25,7 @@ export const Navigation = () => {
     <div className="absolute top-0 left-0 right-0 z-20">
       {/* Top Email Bar */}
       <div className="w-full bg-black text-white py-1 text-center text-sm">
-        Contact Us At dreamknotcreations7@gmail.com
+        Contact Us At naushad@dreamknotcreations.com 
       </div>
 
       <nav className="w-full">
