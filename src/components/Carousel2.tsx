@@ -9,12 +9,12 @@ const slides = [
     description: "",
   },
   {
-    image: "carousalimg2.avif",
+    image: "/carousalimg2.avif",
     title: "",
     description: "",
   },
   {
-    image: "carousalimg3.jpg",
+    image: "/carousalimg3.jpg",
     title: "",
     description: "",
   },
