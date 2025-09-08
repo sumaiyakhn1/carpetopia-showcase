@@ -41,14 +41,23 @@ export const Footer = () => {
 >
   {/* Brand */}
   <motion.div variants={fadeInUp} className="space-y-4">
-    <div className="flex items-center gap-4">
-      <div className="bg-gradient-to-br from-[#e4d5b7] to-[#d6bfa6] w-14 h-14 flex items-center justify-center rounded-2xl shadow-lg">
-        <Award className="text-white w-6 h-6" />
-      </div>
-      <h3 className="font-playfair text-3xl text-[#2f2f2f] hover:text-[#6b6b6b] transition-colors">
-        DreamKnot Creations
-      </h3>
-    </div>
+    <div className="flex items-center">
+  <Link
+    to="/"
+    className={`flex items-center font-[Playfair_Display] tracking-tight transition-colors 
+      "}`}
+    aria-label="DreamKnot Creations Homepage"
+  >
+    <img
+      src="/DKClogo.png"
+      alt="DreamKnot Creations Logo"
+      className="h-20 w-20 md:h-28 md:w-28 object-contain"
+    />
+    <span className="text-xl sm:text-2xl md:text-3xl font-playfair">
+      DreamKnot Creations
+    </span>
+  </Link>
+</div>
     <p className="text-[#555555] text-base leading-relaxed max-w-xs font-playfair">
       Crafting luxury carpets since 1995. Timeless tradition with a refined
       modern touch.

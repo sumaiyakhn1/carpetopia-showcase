@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Search, User, ShoppingBag, Home } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,123 +54,121 @@ export const Navigation = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
-           <Link
-  to="/"
-  className={`flex items-center gap-1 font-[Playfair_Display] tracking-tight transition-colors 
-    ${isHome && !scrolled ? "text-white" : "text-gray-900"}`}
-  aria-label="DreamKnot Creations Homepage"
->
-  {/* Logo */}
-  <img
-    src="/DKClogo.png"
-    alt="DreamKnot Creations Logo"
-    className="h-28 w-28 object-contain"
-  />
-
-  {/* Text */}
-  <span className="text-2xl sm:text-3xl md:text-4xl font-playfair">
-    DreamKnot Creations
-  </span>
-</Link>
-
+{/* Left: Logo */}
+<div className="flex items-center">
+  <Link
+    to="/"
+    className={`flex items-center font-[Playfair_Display] tracking-tight transition-colors 
+      ${isHome && !scrolled ? "text-white" : "text-gray-900"}`}
+    aria-label="DreamKnot Creations Homepage"
+  >
+    <img
+      src="/DKClogo.png"
+      alt="DreamKnot Creations Logo"
+      className="h-20 w-20 md:h-28 md:w-28 object-contain"
+    />
+    <span className="text-xl sm:text-2xl md:text-3xl font-playfair">
+      DreamKnot Creations
+    </span>
+  </Link>
+</div>
 
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center space-x-6">
-              {navItems.map((item) => (
-                <motion.div
-                  key={item.name}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Link
-                    to={item.path}
-                    className={`relative px-5 py-2 rounded-full text-base lg:text-lg font-medium transition-all duration-300 
-                      ${
-                        isHome && !scrolled
-                          ? "text-white hover:text-black hover:bg-white/90"
-                          : "text-gray-800 hover:text-white hover:bg-gray-900"
-                      }`}
-                  >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+  {/* Right: Nav + CTA + Mobile Toggle */}
+  <div className="flex items-center space-x-6">
+    {/* Desktop Nav */}
+    <div className="hidden md:flex items-center space-x-6">
+      {navItems.map((item) => (
+        <motion.div
+          key={item.name}
+          whileHover={{ scale: 1.05, y: -2 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <Link
+            to={item.path}
+            className={`relative px-5 py-2 rounded-full text-base lg:text-lg font-medium transition-all duration-300 
+              ${
+                isHome && !scrolled
+                  ? "text-white hover:text-black hover:bg-white/90"
+                  : "text-gray-800 hover:text-white hover:bg-gray-900"
+              }`}
+          >
+            {item.name}
+          </Link>
+        </motion.div>
+      ))}
+    </div>
 
-            {/* CTA (Desktop) */}
-            <div className="hidden md:block">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  to="/appointment"
-                  className={`px-6 py-2 rounded-full border transition-all text-sm sm:text-base font-medium ${
-                    isHome && !scrolled
-                      ? "bg-transparent text-white border-white hover:bg-white hover:text-black"
-                      : "bg-gray-900 text-white border-gray-900 hover:bg-gray-800"
-                  }`}
-                >
-                  Book an Appointment
-                </Link>
-              </motion.div>
-            </div>
+    {/* CTA (Desktop) */}
+    <div className="hidden md:block">
+      <motion.a
+        whileHover={{
+          scale: 1.05,
+          boxShadow: "0px 6px 18px rgba(228, 213, 183,0.4)",
+        }}
+        href="https://calendly.com/dreamknotcreations7/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex font-playfair items-center font-bold gap-2 bg-gradient-to-r from-[#36332c] via-[#1d1914] to-[#181613] px-6 py-3 rounded-full shadow-md transition-all text-[#dcd0d0]"
+      >
+        <Calendar className="w-5 h-5" />
+        Book Consultation
+      </motion.a>
+    </div>
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                aria-label="Toggle Menu"
-                aria-expanded={isOpen}
-                className={`p-2 ${
-                  isHome && !scrolled ? "text-white" : "text-gray-800"
-                }`}
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
-              </Button>
-            </div>
-          </div>
+    {/* Mobile Menu Button */}
+    <div className="md:hidden">
+      <Button
+        variant="ghost"
+        aria-label="Toggle Menu"
+        aria-expanded={isOpen}
+        className={`p-2 ${
+          isHome && !scrolled ? "text-white" : "text-gray-800"
+        }`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+      </Button>
+    </div>
+  </div>
+</div>
+
         </div>
 
         {/* ✅ Mobile Nav Overlay */}
         <AnimatePresence>
           {isOpen && (
-<motion.div
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  exit={{ opacity: 0, y: -20 }}
-  transition={{ duration: 0.3 }}
-  className="absolute top-full left-0 w-full md:hidden bg-white/95 backdrop-blur-md z-40 flex flex-col items-center py-8 px-6 shadow-lg"
-  role="dialog"
-  aria-modal="true"
->
-  {/* Nav links */}
-  <div className="flex flex-col items-center gap-6 w-full">
-    {navItems.map((item) => (
-      <button
-        key={item.name}
-        onClick={() => handleNavigation(item.path)}
-        className="w-full text-gray-800 text-lg font-medium hover:text-black py-2 text-center"
-      >
-        {item.name}
-      </button>
-    ))}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-full left-0 w-full md:hidden bg-white/95 backdrop-blur-md z-40 flex flex-col items-center py-8 px-6 shadow-lg"
+              role="dialog"
+              aria-modal="true"
+            >
+              {/* Nav links */}
+              <div className="flex flex-col items-center gap-6 w-full">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavigation(item.path)}
+                    className="w-full text-gray-800 text-lg font-medium hover:text-black py-2 text-center"
+                  >
+                    {item.name}
+                  </button>
+                ))}
 
-    {/* CTA inside mobile nav */}
-    <Link
-      to="/appointment"
-      onClick={() => setIsOpen(false)}
-      className="w-full text-center mt-4 px-6 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800"
-    >
-      Book an Appointment
-    </Link>
-  </div>
-</motion.div>
-
-
+                {/* CTA inside mobile nav */}
+                <Link
+                  to="/appointment"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center mt-4 px-6 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800"
+                >
+                  Book an Appointment
+                </Link>
+              </div>
+            </motion.div>
           )}
         </AnimatePresence>
       </nav>
