@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
       playsInline
       className="absolute inset-0 h-full w-full object-cover"
     >
-      <source src="../../public/About-video-1.mp4" type="video/mp4" />
+      <source src="/About-video-1.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </motion.div>
@@ -458,22 +458,22 @@ export default function AboutDreamKnotCreations() {
     {
       step: "Design",
       desc: "Sketching motifs and mapping palettes with precision before a single thread is woven.",
-      video: "../../public/design-carpets.mp4",
+      video: "/design-carpets.mp4",
     },
     {
       step: "Dyeing",
       desc: "Natural, low-impact dyeing for rich hues that last generations.",
-      video: "../../public/Dyeing-process.mp4",
+      video: "/Dyeing-process.mp4",
     },
     {
       step: "Weaving",
       desc: "Hand-knotted artistry bringing life, texture, and soul to every carpet.",
-      video: "../../public/weaving-about.mp4",
+      video: "/weaving-about.mp4",
     },
     {
       step: "Finishing",
       desc: "Meticulous shearing, trimming, and detailing for perfection.",
-      video: "../..//public/Finished-carpet.mp4",
+      video: "/Finished-carpet.mp4",
     },
   ].map((item, i) => (
     <motion.div

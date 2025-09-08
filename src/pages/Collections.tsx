@@ -20,7 +20,7 @@ const fadeInVariant = (direction: "left" | "right") => ({
 const cards = [
   {
     link: "/collections/tufted",
-    img: "../../public/carpet/tufted/tufted-cover-photo.jpg",
+    img: "/carpet/tufted/tufted-cover-photo.jpg",
     title: "Tufted Collection",
     desc: "Premium materials and exquisite craftsmanship",
   },
@@ -32,13 +32,13 @@ const cards = [
   },
   {
     link: "/collections/prayer-mat",
-    img: "../../public/carpet/prayer-rug/ab1.jpg",
+    img: "/carpet/prayer-rug/ab1.jpg",
     title: "Prayer Mat Collection",
     desc: "Timeless patterns and traditional motifs",
   },
   {
     link: "/collections/indo-tibetan",
-    img: "../../public/carpet/indo-tibetan/indo-tibet-cover.jpg",
+    img: "/carpet/indo-tibetan/indo-tibet-cover.jpg",
     title: "Indo-Tibetan Collection",
     desc: "Premium materials and exquisite craftsmanship",
   },

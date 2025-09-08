@@ -11,28 +11,28 @@ const rugs = [
   {
     id: 1,
     name: "Graphite Hex",
-    image: "../../public/carpet/indo-tibetan/Graphic-hex.jpg",
+    image: "/carpet/indo-tibetan/Graphic-hex.jpg",
     description:
       "With a deep charcoal base and raised interlocking hexagon motifs, this durry creates a bold yet elegant visual impact.",
   },
   {
     id: 2,
     name: "Ivory Diamond Weave",
-    image: "../../public/carpet/indo-tibetan/ivory-diamond.jpg",
+    image: "/carpet/indo-tibetan/ivory-diamond.jpg",
     description:
       "Designed with a clean, geometric diamond pattern, its soft ivory tones and raised texture fit perfectly in minimalist spaces.",
   },
   {
     id: 3,
     name: "Tribal Echo",
-    image: "../../public/carpet/indo-tibetan/diamond-carpet.jpg",
+    image: "/carpet/indo-tibetan/diamond-carpet.jpg",
     description:
       "An intricate grid of repeating tribal shapes gives this rug a rhythmic and textural appeal with cultural richness.",
   },
   {
     id: 4,
     name: "Midnight Diamond Lux",
-    image: "../../public/carpet/indo-tibetan/Midnight-carpet.jpg",
+    image: "/carpet/indo-tibetan/Midnight-carpet.jpg",
     description:
       "This plush rug features bold diamond motifs in graphite and silver-grey tones, perfect as a luxe statement piece.",
   },

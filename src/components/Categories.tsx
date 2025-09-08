@@ -27,7 +27,7 @@ const categories = [
     subtitle: "Explore Now!",
     description:
       "Experience luxury with hand-knotted Indo-Tibetan rugs, blending heritage artistry and timeless elegance.",
-    image: "../../public/carpet/indo-tibetan/indo-tibet-cover.jpg",
+    image: "/carpet/indo-tibetan/indo-tibet-cover.jpg",
     type: "Indo-Tibbetan",
     link: "/collections/indo-tibetan",
   },

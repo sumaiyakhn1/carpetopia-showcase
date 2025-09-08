@@ -154,7 +154,7 @@ export const About = () => {
           className="absolute bottom-16 right-20 w-[320px] h-[200px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
         >
           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src="../../public/background-video-about.mp4" type="video/mp4" />
+            <source src="/background-video-about.mp4" type="video/mp4" />
           </video>
         </motion.div>
       </div>

@@ -14,7 +14,7 @@ const carpets = [
     name: "Elegant Prayer Mat",
     price: "70 x 110cm (27.5 x 43.3in)",
     images: [
-      "../../public/carpet/prayer-rug/Elegant-prayer-mat.jpg",
+      "/carpet/prayer-rug/Elegant-prayer-mat.jpg",
       "/carpet/prayer-rug/nab1.1.png",
       "/carpet/prayer-rug/nab1.2.png",
     ],
@@ -26,7 +26,7 @@ const carpets = [
     name: "Classic Wool Rug",
     price: "70 x 110cm (27.5 x 43.3in)",
     images: [
-      "../../public/carpet/prayer-rug/prayer-carpet.jpg",
+      "/carpet/prayer-rug/prayer-carpet.jpg",
       "/carpet/prayer-rug/nab2.1.png",
       "/carpet/prayer-rug/nab2.2.png",
     ],
@@ -38,7 +38,7 @@ const carpets = [
     name: "Classic Prayer Rug",
     price: "70 x 110cm (27.5 x 43.3in)",
     images: [
-      "../../public/carpet/prayer-rug/classic-prayer-rug.jpg",
+      "/carpet/prayer-rug/classic-prayer-rug.jpg",
       "/carpet/prayer-rug/nab3.1.png",
       "/carpet/prayer-rug/nab3.2.png",
     ],
@@ -249,7 +249,7 @@ const CarpetCard = ({ carpet, onClick, index }) => (
         {carpet.description}
       </p>
       <p className="mt-3 text-sm font-medium text-gray-900">
-        {carpet.price}
+        {}
       </p>
     </div>
   </motion.div>
