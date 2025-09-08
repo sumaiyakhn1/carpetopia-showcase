@@ -10,7 +10,24 @@
     
     <!-- Favicon -->
     <link rel="icon" href="/carpet.png" type="image/x-icon" />
+ <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-KQSRR8VM8L"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      // disable auto page_view for SPA
+      gtag("config", "G-KQSRR8VM8L", { send_page_view: false });
+    </script>
   </head>
+
+<!-- Google tag (gtag.js) -->
+
 
   <body>
     <div id="root"></div>

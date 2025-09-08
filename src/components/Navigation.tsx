@@ -1,96 +1,180 @@
-import { useState } from "react";
-import { Menu } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Search, User, ShoppingBag, Home } from "lucide-react";
 import { Button } from "./ui/button";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
 
   const navItems = [
     { name: "Home", path: "/" },
-    // { name: "In House Production", path: "/production" },
     { name: "Collections", path: "/collections" },
-    // { name: "Events", path: "/events" },
-    { name: "Contact Us", path: "/contact" }
+    { name: "About Us", path: "/About1" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   const handleNavigation = (path: string) => {
-    console.log(`Navigating to: ${path}`);
     setIsOpen(false);
     navigate(path);
   };
 
-  return (
-    <div className="absolute top-0 left-0 right-0 z-20">
-      {/* Top Email Bar */}
-      <div className="w-full bg-black text-white py-1 text-center text-sm">
-        Contact Us At naushad@dreamknotcreations.com 
-      </div>
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-      <nav className="w-full">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center py-4">
-            {/* Logo Section */}
-            <div className="w-full md:w-auto flex justify-between items-center mb-4 md:mb-6">
-              <div className="flex items-center gap-4">
-                {/* Logo Space */}
-                <div className="w-36 h-36 bg-transparent rounded flex items-center justify-center">
+  // ✅ Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [isOpen]);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled || !isHome
+          ? "bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <nav
+        className="w-full font-[playfair]"
+        role="navigation"
+        aria-label="Main Navigation"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+           <Link
+  to="/"
+  className={`flex items-center gap-1 font-[Playfair_Display] tracking-tight transition-colors 
+    ${isHome && !scrolled ? "text-white" : "text-gray-900"}`}
+  aria-label="DreamKnot Creations Homepage"
+>
+  {/* Logo */}
   <img
     src="/DKClogo.png"
-    alt="Logo"
-    className="w-full h-full object-contain"
+    alt="DreamKnot Creations Logo"
+    className="h-28 w-28 object-contain"
   />
-</div>
-                <Link to="/" className="text-3xl font-playfair font-bold text-white">
-                  Dream Knot Creations
-                </Link>
-              </div>
-              
-              {/* Mobile Menu Button */}
-              <Button
-                variant="ghost"
-                className="md:hidden text-white"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-12">
+
+  {/* Text */}
+  <span className="text-2xl sm:text-3xl md:text-4xl font-playfair">
+    DreamKnot Creations
+  </span>
+</Link>
+
+
+
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
-                <button
+                <motion.div
                   key={item.name}
-                  onClick={() => handleNavigation(item.path)}
-                  className="font-inter text-white hover:text-gray-300 transition-all duration-300 
-                    relative after:content-[''] after:absolute after:w-full after:scale-x-0 
-                    after:h-0.5 after:bottom-0 after:left-0 after:bg-white 
-                    after:origin-bottom-right after:transition-transform after:duration-300 
-                    hover:after:scale-x-100 hover:after:origin-bottom-left"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  {item.name}
-                </button>
+                  <Link
+                    to={item.path}
+                    className={`relative px-5 py-2 rounded-full text-base lg:text-lg font-medium transition-all duration-300 
+                      ${
+                        isHome && !scrolled
+                          ? "text-white hover:text-black hover:bg-white/90"
+                          : "text-gray-800 hover:text-white hover:bg-gray-900"
+                      }`}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
               ))}
             </div>
 
-            {/* Mobile Menu */}
-            {isOpen && (
-              <div className="md:hidden w-full py-4 space-y-4 bg-black/90 mt-4 rounded-lg animate-fade-in">
-                {navItems.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => handleNavigation(item.path)}
-                    className="block w-full text-white hover:text-gray-300 transition-colors px-4 py-2 text-center"
-                  >
-                    {item.name}
-                  </button>
-                ))}
-              </div>
-            )}
+            {/* CTA (Desktop) */}
+            <div className="hidden md:block">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link
+                  to="/appointment"
+                  className={`px-6 py-2 rounded-full border transition-all text-sm sm:text-base font-medium ${
+                    isHome && !scrolled
+                      ? "bg-transparent text-white border-white hover:bg-white hover:text-black"
+                      : "bg-gray-900 text-white border-gray-900 hover:bg-gray-800"
+                  }`}
+                >
+                  Book an Appointment
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                aria-label="Toggle Menu"
+                aria-expanded={isOpen}
+                className={`p-2 ${
+                  isHome && !scrolled ? "text-white" : "text-gray-800"
+                }`}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+              </Button>
+            </div>
           </div>
         </div>
+
+        {/* ✅ Mobile Nav Overlay */}
+        <AnimatePresence>
+          {isOpen && (
+<motion.div
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0, y: -20 }}
+  transition={{ duration: 0.3 }}
+  className="absolute top-full left-0 w-full md:hidden bg-white/95 backdrop-blur-md z-40 flex flex-col items-center py-8 px-6 shadow-lg"
+  role="dialog"
+  aria-modal="true"
+>
+  {/* Nav links */}
+  <div className="flex flex-col items-center gap-6 w-full">
+    {navItems.map((item) => (
+      <button
+        key={item.name}
+        onClick={() => handleNavigation(item.path)}
+        className="w-full text-gray-800 text-lg font-medium hover:text-black py-2 text-center"
+      >
+        {item.name}
+      </button>
+    ))}
+
+    {/* CTA inside mobile nav */}
+    <Link
+      to="/appointment"
+      onClick={() => setIsOpen(false)}
+      className="w-full text-center mt-4 px-6 py-3 rounded-full bg-gray-900 text-white font-medium hover:bg-gray-800"
+    >
+      Book an Appointment
+    </Link>
+  </div>
+</motion.div>
+
+
+          )}
+        </AnimatePresence>
       </nav>
-    </div>
+    </header>
   );
 };

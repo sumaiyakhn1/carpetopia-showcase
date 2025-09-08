@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Navigation } from "@/components/Navigation";
 import { StickyMenu } from "@/components/StickyMenu";
 import { Carousel } from "@/components/Carousel2";
 import { Footer } from "@/components/Footer";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { motion } from "framer-motion";
 
 const rugs = [
   {
@@ -33,7 +34,7 @@ const rugs = [
   },
   {
     id: 6,
-    name: "Ivory Grid Durry",
+    name: "Ivory Grid Durry",  
     price: "$799",
     image: "/carpet/pile-dhurry/md6.jpg",
     description:
@@ -86,11 +87,17 @@ const ZoomModal = ({ image, onClose }) => {
   if (!image) return null;
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center"
       onClick={onClose}
     >
-      <div onClick={(e) => e.stopPropagation()} className="max-w-full max-h-full">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="max-w-full max-h-full"
+      >
         <TransformWrapper
           doubleClick={{ disabled: false }}
           wheel={{ step: 100 }}
@@ -98,7 +105,10 @@ const ZoomModal = ({ image, onClose }) => {
           zoomAnimation={{ size: 300 }}
         >
           <TransformComponent>
-            <img
+            <motion.img
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.4 }}
               src={image}
               alt="Zoomable rug"
               className="max-h-[90vh] object-contain"
@@ -106,49 +116,131 @@ const ZoomModal = ({ image, onClose }) => {
           </TransformComponent>
         </TransformWrapper>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const Modern = () => {
   const [zoomImage, setZoomImage] = useState(null);
 
-
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-sans bg-gradient-to-b from-gray-50 to-gray-100">
       <Header />
       <Navigation />
       <StickyMenu />
       <main>
-        <Carousel height="400px" />
-        <section className="py-20">
+      
+
+        <section className="py-32">
           <div className="container mx-auto px-4">
-            <h1 className="font-playfair text-4xl text-center mb-12">Pile Durry</h1>
-            <p className="max-w-2xl mx-auto text-center text-gray-700 mb-10">
-              Pile durries are contemporary flat-weave rugs known for their soft surface and durable structure.
-              Handcrafted using traditional techniques, they effortlessly blend style, comfort, and artistry.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {rugs.map((rug) => (
-                <div
-                  key={rug.id}
-                  className="border rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
-                >
-                  <img
-                    src={rug.image}
-                    alt={rug.name}
-                    className="w-full h-64 object-cover cursor-zoom-in"
-                    onClick={() => setZoomImage(rug.image)}
-                  />
-                  <div className="p-4">
-                    <h2 className="text-xl font-semibold">{rug.name}</h2>
-                    <p className="text-sm mt-2 text-gray-700">{rug.description}</p>
-                    {/* <p className="text-md mt-3 text-gray-800 font-bold">{rug.price}</p> */}
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Heading */}
+{/* Hero Section */}
+<section className="relative py-10 sm:py-20 bg-gradient-to-br from-cream-100 via-cream-200 to-brown-100 overflow-hidden">
+  {/* Subtle animated gradient overlay */}
+  <motion.div
+    className="absolute inset-0 bg-gradient-to-tr from-brown-200/30 via-transparent to-cream-300/40"
+    animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
+    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+    style={{ backgroundSize: "300% 300%" }}
+  />
+
+  {/* Decorative floating accents */}
+  <motion.span
+    className="absolute top-8 left-10 text-brown-600/20 text-4xl"
+    animate={{ y: [0, 12, 0] }}
+    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+  >
+    ✦
+  </motion.span>
+  <motion.span
+    className="absolute bottom-12 right-12 text-brown-700/20 text-5xl"
+    animate={{ rotate: [0, 360] }}
+    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+  >
+    ◆
+  </motion.span>
+
+  {/* Hero Content */}
+  <div className="relative z-10 container mx-auto px-6 text-center">
+    <motion.h1
+      className="font-playfair text-3xl md:text-4xl font-bold text-brown-900 mb-3"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      Pile Durry Collection
+    </motion.h1>
+
+    <motion.p
+      className="max-w-2xl mx-auto text-brown-700 italic text-sm md:text-base leading-relaxed"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.2 }}
+    >
+      Handcrafted durries blending comfort, elegance,  
+      and timeless artistry for modern living.
+    </motion.p>
+  </div>
+</section>
+
+
+
+
+            {/* Grid */}
+            {/* Grid */}
+<motion.div
+  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.2 }}
+  variants={{
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.2 },
+    },
+  }}
+>
+  {rugs.map((rug) => (
+    <motion.div
+      key={rug.id}
+      variants={{
+        hidden: { opacity: 0, y: 40, scale: 0.95 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: { duration: 0.6, ease: "easeOut" },
+        },
+      }}
+      whileHover={{ y: -6 }}
+      className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm border border-gray-200 flex flex-col"
+    >
+      {/* Image wrapper with aspect ratio */}
+      <motion.div whileHover={{ scale: 1.03 }} className="w-full">
+        <div className="aspect-[4/3] w-full overflow-hidden">
+          <img
+            src={rug.image}
+            alt={rug.name}
+            className="w-full h-full object-cover cursor-zoom-in transition-transform duration-500 hover:scale-105"
+            onClick={() => setZoomImage(rug.image)}
+          />
+        </div>
+      </motion.div>
+
+      {/* Text */}
+      <div className="p-4 sm:p-5 flex flex-col flex-grow">
+        <h2 className="text-base sm:text-lg font-semibold text-gray-800">
+          {rug.name}
+        </h2>
+        <p className="text-sm mt-2 text-gray-600 leading-relaxed line-clamp-3">
+          {rug.description}
+        </p>
+        <p className="mt-3 text-md font-medium text-gray-900">{rug.price}</p>
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
+
           </div>
         </section>
       </main>

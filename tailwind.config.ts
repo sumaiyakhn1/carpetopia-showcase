@@ -57,6 +57,20 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+
+        // ✅ Added custom cream palette
+        cream: {
+          50: "#fdfcf9",
+          100: "#f8f6f1",
+          200: "#f0ede3",
+          300: "#e6e0d1",
+          400: "#d6cbb0",
+          500: "#c6b391",
+          600: "#b09a75",
+          700: "#947c59",
+          800: "#786043",
+          900: "#5f4a34",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -72,13 +86,18 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        // 🔥 Gradient shimmer keyframes
+        "gradient-x": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gradient-x": "gradient-x 6s ease infinite",
       },
     },
   },
   plugins: [tailwindcssAnimate],
 } satisfies Config;
-

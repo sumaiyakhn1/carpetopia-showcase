@@ -16,7 +16,7 @@ const Calendly = () => {
 
       {/* Black Button */}
       <a
-        href="https://calendly.com/dreamknotcreations7/30min"
+        href="https://calendly.com/dreamknotcreations7/15-minute-exploration-call"
         target="_blank"
         rel="noopener noreferrer"
         className="px-6 py-3 bg-black text-white font-medium rounded-full shadow-md hover:bg-gray-800 transition duration-300 inline-block"

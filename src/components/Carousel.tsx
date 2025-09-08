@@ -1,20 +1,22 @@
+"use client";
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
     image: "/carousalimg1.avif",
-    title: "Luxury Indo-Tibbetan Carpets",
+    title: "Luxury Indo-Tibetan Carpets",
     description: "Handcrafted excellence for your home",
   },
   {
-    image: "/carousalimg2.avif",
+    image: "/Crausal-carpet.jpg",
     title: "Prayer Collection",
     description: "Contemporary designs for modern spaces",
   },
   {
-    image: "/carousalimg3.jpg",
+    image: "/Crausol-carpet-1.jpg",
     title: "Traditional Elegance",
     description: "Timeless patterns that tell stories",
   },
@@ -24,55 +26,87 @@ interface CarouselProps {
   height?: string;
 }
 
-export const Carousel = ({ height = "600px" }: CarouselProps) => {
+export const Carousel = ({ height = "100vh" }: CarouselProps) => {
   const [current, setCurrent] = useState(0);
 
   const next = () => setCurrent((current + 1) % slides.length);
-  const prev = () => setCurrent((current - 1 + slides.length) % slides.length);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 8000);
     return () => clearInterval(timer);
   }, [current]);
 
   return (
-    <div className={`relative overflow-hidden`} style={{ height }}>
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-500 ${
-            index === current ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h2 className="font-playfair text-4xl md:text-6xl mb-4">{slide.title}</h2>
-              <p className="font-inter text-lg md:text-xl">{slide.description}</p>
+    <section
+      className="relative w-full overflow-hidden bg-black"
+      style={{ height }}
+      aria-label="Featured Carpet Collections"
+    >
+      <div className="absolute inset-0">
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={current}
+            className="absolute inset-0 w-full h-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.8, ease: "easeInOut" }}
+            aria-live="polite"
+          >
+            {/* Background Image */}
+            <motion.img
+              src={slides[current].image}
+              alt={`${slides[current].title} – ${slides[current].description}`}
+              className="w-full h-full object-cover"
+              loading={current === 0 ? "eager" : "lazy"}
+              initial={{ scale: 1.05 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 8, ease: "easeInOut" }}
+            />
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+
+            {/* Text */}
+            <div className="absolute bottom-10 sm:bottom-16 left-5 sm:left-10 md:left-20 text-left px-4 sm:px-6">
+              <motion.h1
+                key={slides[current].title}
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className="font-sans text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light text-white mb-3 sm:mb-4 tracking-tight leading-snug"
+              >
+                {slides[current].title}
+              </motion.h1>
+
+              <motion.p
+                key={slides[current].description}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+                className="text-sm sm:text-base md:text-xl text-gray-200 max-w-md sm:max-w-xl leading-relaxed"
+              >
+                {slides[current].description}
+              </motion.p>
+
+             <motion.div
+  initial={{ opacity: 0, y: 15 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1.5, delay: 0.5 }}
+>
+  <Link to="/collections" aria-label="Explore Carpet Collection">
+    <Button
+      className="mt-6 sm:mt-8 px-4 sm:px-6 py-2 sm:py-3 bg-white text-black text-xs sm:text-sm md:text-base rounded-full hover:bg-gray-100 transition"
+    >
+      Explore Collection
+    </Button>
+  </Link>
+</motion.div>
+
             </div>
-          </div>
-        </div>
-      ))}
-      
-      <Button
-        variant="ghost"
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-white"
-        onClick={prev}
-      >
-        <ChevronLeft className="h-8 w-8" />
-      </Button>
-      
-      <Button
-        variant="ghost"
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white"
-        onClick={next}
-      >
-        <ChevronRight className="h-8 w-8" />
-      </Button>
-    </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </section>
   );
 };
