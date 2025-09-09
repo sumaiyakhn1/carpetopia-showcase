@@ -32,7 +32,7 @@ const cards = [
   },
   {
     link: "/collections/prayer-mat",
-    img: "/carpet/prayer-rug/ab1.jpg",
+    img: "/carpet/prayer-rug/ab1.webp",
     title: "Prayer Mat Collection",
     desc: "Timeless patterns and traditional motifs",
   },

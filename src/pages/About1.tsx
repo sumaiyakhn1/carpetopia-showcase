@@ -214,19 +214,12 @@ const Hero: React.FC = () => {
 
 
   {/* Scroll to Process section */}
-  <button
-  onClick={() => {
-    document.getElementById("timeline")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }}
-  className="group inline-flex items-center gap-2 rounded-2xl bg-neutral-100 px-6 py-3 text-sm md:text-base font-medium text-black shadow-lg transition-transform duration-300 hover:-translate-y-1"
->
-  Our craft{" "}
-  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-</button>
-
+  <a
+    href="/collections"
+    className="inline-flex items-center gap-2 rounded-2xl bg-white/70 px-6 py-3 text-sm md:text-base font-medium text-neutral-900 ring-1 ring-cream-300 backdrop-blur transition-transform duration-300 hover:-translate-y-1"
+  >
+    Our Craft
+  </a>
 </motion.div>
 
   </div>

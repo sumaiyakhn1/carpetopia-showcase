@@ -6,17 +6,17 @@ import { Link } from "react-router-dom";
 
 const slides = [
   {
-    image: "/carousalimg1.avif",
+    image: "/carousalimg1.webp",
     title: "Luxury Indo-Tibetan Carpets",
     description: "Handcrafted excellence for your home",
   },
   {
-    image: "/Crausal-carpet.jpg",
+    image: "/Crausal-carpet.webp",
     title: "Prayer Collection",
     description: "Contemporary designs for modern spaces",
   },
   {
-    image: "/Crausol-carpet-1.jpg",
+    image: "/Crausol-carpet-1.webp",
     title: "Traditional Elegance",
     description: "Timeless patterns that tell stories",
   },
