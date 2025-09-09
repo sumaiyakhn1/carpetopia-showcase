@@ -24,7 +24,8 @@ const Section: React.FC<React.PropsWithChildren<{
 }>> = ({ id, title, kicker, description, children }) => {
   return (
 
-    <><Header /><Navigation /><StickyMenu /><section id={id} className="relative scroll-mt-24 py-24 md:py-32">
+    <><Header /><Navigation /><StickyMenu />
+    <section id={id} className="relative scroll-mt-24 py-24 md:py-32">
           <div className="mx-auto w-full max-w-6xl px-4">
               <motion.div
                   initial={{ opacity: 0, y: 24 }}
@@ -39,7 +40,7 @@ const Section: React.FC<React.PropsWithChildren<{
                           <span>{kicker}</span>
                       </div>
                   )}
-                  <h2 className="text-3xl font-semibold leading-tight text-neutral-900 md:text-5xl">
+                  <h2 className="text-3xl sr-only font-semibold leading-tight text-neutral-900 md:text-5xl">
                       {title}
                   </h2>
                   {description && (
@@ -154,7 +155,7 @@ const Hero: React.FC = () => {
       <Star className="h-4 w-4" /> Since 1995 — Handcrafted Luxury
     </motion.div>
 
-    {/* Big About Us */}
+
    {/* Big About Us */}
 <motion.h1
   initial={{ opacity: 0, y: 40 }}
@@ -198,21 +199,34 @@ const Hero: React.FC = () => {
   className="flex flex-wrap justify-center items-center gap-4"
 >
   {/* Scroll to Story section */}
-  <a
-    href="#story"
-    className="group inline-flex items-center gap-2 rounded-2xl bg-neutral-900 px-6 py-3 text-sm md:text-base font-medium text-white shadow-lg transition-transform duration-300 hover:-translate-y-1"
-  >
-    Our Story{" "}
-    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-  </a>
+ <button
+  onClick={() => {
+    document.getElementById("story")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }}
+  className="group inline-flex items-center gap-2 rounded-2xl bg-neutral-900 px-6 py-3 text-sm md:text-base font-medium text-white shadow-lg transition-transform duration-300 hover:-translate-y-1"
+>
+  Our Story{" "}
+  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+</button>
+
 
   {/* Scroll to Process section */}
-  <a
-    href="#process"
-    className="inline-flex items-center gap-2 rounded-2xl bg-white/70 px-6 py-3 text-sm md:text-base font-medium text-neutral-900 ring-1 ring-cream-300 backdrop-blur transition-transform duration-300 hover:-translate-y-1"
-  >
-    Our Craft
-  </a>
+  <button
+  onClick={() => {
+    document.getElementById("timeline")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }}
+  className="group inline-flex items-center gap-2 rounded-2xl bg-neutral-100 px-6 py-3 text-sm md:text-base font-medium text-black shadow-lg transition-transform duration-300 hover:-translate-y-1"
+>
+  Our craft{" "}
+  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+</button>
+
 </motion.div>
 
   </div>
@@ -332,7 +346,7 @@ export default function AboutDreamKnotCreations() {
               {/* Right content */}
               <main className="">
                   {/* Story */}
-                <Section id={""} title={""}>
+                <Section id={"story"} title={"our story"}>
   <div className="relative font-playfair isolate rounded-3xl bg-gradient-to-b from-white via-cream-50 to-cream-100 px-4 sm:px-6 md:px-12 py-12 sm:py-16 shadow-lg">
     {/* Background accents */}
     <div
@@ -537,7 +551,7 @@ export default function AboutDreamKnotCreations() {
                   
 
                   {/* Timeline with animated left line that follows on scroll */}
-             <Section id={""} title={""}  
+             <Section id={"timeline"} title={"Timeline"}  
 >
   {/* Sweet impactful heading */}
   <motion.div

@@ -4,9 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
-html {
+
+
+html, body {
   scroll-behavior: smooth;
 }
+
 
 
 .logo {
