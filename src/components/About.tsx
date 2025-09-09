@@ -5,7 +5,7 @@ import { Sparkles, Star, Feather } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const About = () => {
-  const headingText = "DreamKnot Creations".split("");
+  const headingText = `DreamKnot - Creation`.split("");
 
   // Track cursor for floating icons
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -67,20 +67,20 @@ export const About = () => {
         viewport={{ amount: 0.3 }}
         className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-center tracking-wide text-[#4b3621] drop-shadow-sm flex justify-center flex-wrap mt-10"
       >
-        About{" "}
+        About{" "} 
         <span className="ml-3 flex flex-wrap relative bg-gradient-to-r from-[#8b5e3c] via-[#a67c52] to-[#d9b382] bg-clip-text text-transparent animate-gradient">
-          {headingText.map((char, i) => (
+          
             <motion.span
-              key={i}
+              
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.06, duration: 0.4 }}
+              transition={{ delay: 0.06, duration: 0.4 }}
               viewport={{ amount: 0.3 }}
               className="inline-block"
             >
-              {char}
+              Dreamknot Creations
             </motion.span>
-          ))}
+         
         </span>
         
       </motion.h2>
@@ -127,7 +127,7 @@ export const About = () => {
       {/* Background Image */}
       <div className="relative w-full h-[110vh] mt-20">
         <motion.img
-          src="/About-process-image-1.jpg"
+          src="/About-process-image-1.webp"
           alt="Craftsman weaving a carpet"
           className="absolute inset-0 w-full h-full object-cover brightness-90"
           initial={{ opacity: 0, scale: 1.1 }}

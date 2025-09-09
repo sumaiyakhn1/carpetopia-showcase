@@ -18,7 +18,7 @@ const categories = [
     subtitle: "Explore Now!",
     description:
       "Durable and stylish, our Pile Durry collection brings contemporary flair to modern interiors with unique weaves.",
-    image: "/carpet/pile-dhurry/md1.jpg",
+    image: "/carpet/pile-dhurry/md1.webp",
     type: "Pile Durry",
     link: "/collections/pile-dhurry",
   },
@@ -27,7 +27,7 @@ const categories = [
     subtitle: "Explore Now!",
     description:
       "Experience luxury with hand-knotted Indo-Tibetan rugs, blending heritage artistry and timeless elegance.",
-    image: "/carpet/indo-tibetan/indo-tibet-cover.jpg",
+    image: "/carpet/indo-tibetan/indo-tibet-cover.webp",
     type: "Indo-Tibbetan",
     link: "/collections/indo-tibetan",
   },
