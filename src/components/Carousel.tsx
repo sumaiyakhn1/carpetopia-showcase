@@ -6,17 +6,17 @@ import { Link } from "react-router-dom";
 
 const slides = [
   {
-    image: "/carousalimg1.webp",
+    image: "/Home-photo-1.webp",
     title: "Luxury Indo-Tibetan Carpets",
     description: "Handcrafted excellence for your home",
   },
   {
-    image: "/Crausal-carpet.webp",
+    image: "/Home-page-2.webp",
     title: "Prayer Collection",
     description: "Contemporary designs for modern spaces",
   },
   {
-    image: "/Crausol-carpet-1.webp",
+    image: "/home-page-3.webp",
     title: "Traditional Elegance",
     description: "Timeless patterns that tell stories",
   },
@@ -58,7 +58,7 @@ export const Carousel = ({ height = "100vh" }: CarouselProps) => {
               src={slides[current].image}
               alt={`${slides[current].title} – ${slides[current].description}`}
               className="w-full h-full object-cover"
-              loading={current === 0 ? "eager" : "lazy"}
+              loading={current === 0 ? "lazy" : "lazy"}
               initial={{ scale: 1.05 }}
               animate={{ scale: 1 }}
               transition={{ duration: 8, ease: "easeInOut" }}

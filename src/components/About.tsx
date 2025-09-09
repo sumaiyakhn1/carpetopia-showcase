@@ -127,7 +127,7 @@ export const About = () => {
       {/* Background Image */}
       <div className="relative w-full h-[110vh] mt-20">
         <motion.img
-          src="/About-process-image-1.webp"
+          src="/About-Image-back.webp"
           alt="Craftsman weaving a carpet"
           className="absolute inset-0 w-full h-full object-cover brightness-90"
           initial={{ opacity: 0, scale: 1.1 }}

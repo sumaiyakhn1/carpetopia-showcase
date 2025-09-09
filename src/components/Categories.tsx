@@ -9,7 +9,7 @@ const categories = [
     subtitle: "Explore Now!",
     description:
       "Exquisite craftsmanship meets premium materials in our Indo-Tibetan collection, perfect for sophisticated spaces.",
-    image: "/carpet/tufted/tufted-cover-photo.jpg",
+    image: "/carpet/tufted/tufted-cover-photo.webp",
     type: "Indo-Tibbetan",
     link: "/collections/tufted",
   },
