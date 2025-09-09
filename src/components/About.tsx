@@ -143,7 +143,7 @@ export const About = () => {
           className="absolute top-16 left-12 w-[280px] h-[180px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
         >
           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src="/background-video-about.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dqxhomda3/video/upload/v1757449856/About-video_giudn5.mp4" type="video/mp4" />
           </video>
         </motion.div>
 
@@ -154,7 +154,7 @@ export const About = () => {
           className="absolute bottom-16 right-20 w-[320px] h-[200px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white"
         >
           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-            <source src="/background-video-about.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dqxhomda3/video/upload/v1757449856/About-video_giudn5.mp4" type="video/mp4" />
           </video>
         </motion.div>
       </div>
