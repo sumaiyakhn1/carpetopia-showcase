@@ -419,121 +419,98 @@ export default function AboutDreamKnotCreations() {
                   
 
                   {/* Process */}
-                  <Section id={""} title={""}
->
-  
-
+                 <Section id={""} title={""}>
   {/* Process Timeline */}
   <div className="relative isolate rounded-3xl bg-gradient-to-b from-white via-cream-50 to-cream-100 px-4 sm:px-6 md:px-12 py-16 shadow-lg">
-  {/* Decorative blurred accents */}
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.3 }}
-    transition={{ duration: 0.8 }}
-    className="mb-16 text-center max-w-3xl mx-auto"
-  >
-    <p className="text-sm font-playfair uppercase tracking-widest text-amber-800">
-      Our Process
-    </p>
-    <h2 className="mt-2  text-4xl md:text-5xl font-playfair leading-tight text-neutral-900">
-      From <span className="text-amber-900">sketch</span> to {" "}
-      <span className="text-amber-900">Masterpiece</span>
-    </h2>
-    <p className="mt-4 text-lg text-neutral-600">
-      Every carpet is a journey. We collaborate on designs, select natural
-      fibers, and shape each weave by hand — bringing softness, strength, and
-      serenity to your home.
-    </p>
-  </motion.div>
-  
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 overflow-hidden rounded-3xl"
-  >
-    <div className="absolute -left-24 top-16 h-40 w-40 rounded-full bg-cream-200/60 blur-2xl" />
-    <div className="absolute bottom-[-2rem] right-[-2rem] h-64 w-64 rounded-full bg-white/40 blur-3xl" />
-  </div>
-
-  {/* Section Heading */}
-  
-
- <div className="space-y-20">
-  {[
-    {
-      step: "Design",
-      desc: "Sketching motifs and mapping palettes with precision before a single thread is woven.",
-      video: "/design-carpets.mp4",
-    },
-    {
-      step: "Dyeing",
-      desc: "Natural, low-impact dyeing for rich hues that last generations.",
-      video: "/Dyeing-process.mp4",
-    },
-    {
-      step: "Weaving",
-      desc: "Hand-knotted artistry bringing life, texture, and soul to every carpet.",
-      video: "/weaving-about.mp4",
-    },
-    {
-      step: "Finishing",
-      desc: "Meticulous shearing, trimming, and detailing for perfection.",
-      video: "/Finished-carpet.mp4",
-    },
-  ].map((item, i) => (
+    {/* Decorative blurred accents */}
     <motion.div
-      key={i}
-      initial={{ opacity: 0, y: 40, x: i % 2 === 0 ? -60 : 60 }}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.7, delay: i * 0.2 }}
-      className={`flex flex-col md:flex-row items-center gap-10 ${
-        i % 2 !== 0 ? "md:flex-row-reverse" : ""
-      }`}
+      transition={{ duration: 0.8 }}
+      className="mb-16 text-center max-w-3xl mx-auto"
     >
-      {/* Video */}
-      <div
-        className="w-full md:w-1/2 relative"
-        onMouseEnter={(e) => e.currentTarget.querySelector("video")?.play()}
-        onMouseLeave={(e) => {
-          const video = e.currentTarget.querySelector("video");
-          if (video) {
-            video.pause();
-            video.currentTime = 0; // reset on leave
-          }
-        }}
-      >
-        <motion.video
-          src={item.video}
-          muted
-          playsInline
-          loop
-          className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-md"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.4 }}
-        />
-      </div>
-
-      {/* Text */}
-      <div className="w-full md:w-1/2 space-y-3 text-center md:text-left">
-        <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
-          Step {i + 1}
-        </p>
-        <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 font-playfair">
-          {item.step}
-        </h3>
-        <p className="text-neutral-600 text-base sm:text-lg leading-relaxed">
-          {item.desc}
-        </p>
-      </div>
+      <p className="text-sm font-playfair uppercase tracking-widest text-amber-800">
+        Our Process
+      </p>
+      <h2 className="mt-2 text-4xl md:text-5xl font-playfair leading-tight text-neutral-900">
+        From <span className="text-amber-900">sketch</span> to{" "}
+        <span className="text-amber-900">Masterpiece</span>
+      </h2>
+      <p className="mt-4 text-lg text-neutral-600">
+        Every carpet is a journey. We collaborate on designs, select natural
+        fibers, and shape each weave by hand — bringing softness, strength, and
+        serenity to your home.
+      </p>
     </motion.div>
-  ))}
-</div>
 
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 -z-10 overflow-hidden rounded-3xl"
+    >
+      <div className="absolute -left-24 top-16 h-40 w-40 rounded-full bg-cream-200/60 blur-2xl" />
+      <div className="absolute bottom-[-2rem] right-[-2rem] h-64 w-64 rounded-full bg-white/40 blur-3xl" />
+    </div>
 
+    {/* Section Content */}
+    <div className="space-y-20">
+      {[
+        {
+          step: "Design",
+          desc: "Sketching motifs and mapping palettes with precision before a single thread is woven.",
+          image: "https://res.cloudinary.com/dqxhomda3/image/upload/v1757447673/Process-designing_npsxmm.jpg",
+        },
+        {
+          step: "Dyeing",
+          desc: "Natural, low-impact dyeing for rich hues that last generations.",
+          image: "https://res.cloudinary.com/dqxhomda3/image/upload/v1757447672/Process-dyeing_s0mxcu.jpg",
+        },
+        {
+          step: "Weaving",
+          desc: "Hand-knotted artistry bringing life, texture, and soul to every carpet.",
+          image: "https://res.cloudinary.com/dqxhomda3/image/upload/v1757447672/Process-weaving_ndzihp.jpg",
+        },
+        {
+          step: "Finishing",
+          desc: "Meticulous shearing, trimming, and detailing for perfection.",
+          image: "https://res.cloudinary.com/dqxhomda3/image/upload/v1757447672/Process-finishing_ksg3c8.jpg",
+        },
+      ].map((item, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 40, x: i % 2 === 0 ? -60 : 60 }}
+          whileInView={{ opacity: 1, y: 0, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: i * 0.2 }}
+          className={`flex flex-col md:flex-row items-center gap-10 ${
+            i % 2 !== 0 ? "md:flex-row-reverse" : ""
+          }`}
+        >
+          {/* Image */}
+          <motion.img
+            src={item.image}
+            alt={item.step}
+            className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-md"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.4 }}
+          />
 
-</div>
-
+          {/* Text */}
+          <div className="w-full md:w-1/2 space-y-3 text-center md:text-left">
+            <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
+              Step {i + 1}
+            </p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-neutral-900 font-playfair">
+              {item.step}
+            </h3>
+            <p className="text-neutral-600 text-base sm:text-lg leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
 </Section>
 
 
