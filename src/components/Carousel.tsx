@@ -6,17 +6,17 @@ import { Link } from "react-router-dom";
 
 const slides = [
   {
-    image: "/Home-photo-1.webp",
+    image: "https://res.cloudinary.com/dqxhomda3/image/upload/v1757447894/Home-Photo-1_xxf52u.jpg",
     title: "Luxury Indo-Tibetan Carpets",
     description: "Handcrafted excellence for your home",
   },
   {
-    image: "/Home-page-2.webp",
+    image: "https://res.cloudinary.com/dqxhomda3/image/upload/v1757447893/Home-page-2_xitzs3.jpg",
     title: "Prayer Collection",
     description: "Contemporary designs for modern spaces",
   },
   {
-    image: "/home-page-3.webp",
+    image: "https://res.cloudinary.com/dqxhomda3/image/upload/v1757447893/home-page-3_v22g9e.jpg",
     title: "Traditional Elegance",
     description: "Timeless patterns that tell stories",
   },
