@@ -24,14 +24,14 @@ const stagger = {
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-br from-[#fffdf8] via-[#fcf7ee] to-[#fffdf8] text-[#3e3e3e] mt-32 overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-[#fffdf8] via-[#fcf7ee] to-[#fffdf8] text-[#3e3e3e]  overflow-hidden">
       {/* Subtle Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-tr from-[#f6ecda]/40 via-[#fcf7ee]/30 to-[#fffdf8]/40 blur-3xl opacity-50 -z-10" />
 
       {/* Glass effect overlay */}
       <div className="absolute inset-0 -z-10 bg-white/50 backdrop-blur-xl border-t border-[#f6ecda] rounded-t-3xl shadow-inner" />
 
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 py-24">
         <motion.div
   variants={stagger}
   initial="hidden"
