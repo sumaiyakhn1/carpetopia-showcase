@@ -7,14 +7,7 @@ import { Navigation } from "@/components/Navigation";
 import { StickyMenu } from "@/components/StickyMenu";
 import { Footer } from "@/components/Footer";
 
-/**
- * Dream Knot Creations — About Page
- * A modern, Awwwards‑inspired page with soft, calm aesthetics (white/light cream),
- * smooth scroll animations, and a vertical progress rail on the left.
- *
- * Tech: React + Tailwind + Framer Motion + Lucide Icons
- * Drop this component into your Next.js/React app and route it to "/about".
- */
+
 
 const Section: React.FC<React.PropsWithChildren<{
   id: string;
@@ -126,21 +119,26 @@ const Hero: React.FC = () => {
   className="relative isolate overflow-hidden min-h-screen"
 >
   {/* Background Video Fullscreen */}
-  <motion.div
-    style={{ y, opacity }}
-    className="absolute inset-0 -z-10"
+<motion.div
+  style={{ y, opacity }}
+  className="absolute inset-0 -z-10"
+>
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full h-full object-cover"
   >
-    <video
-      autoPlay
-      loop
-      muted
-      playsInline
-      className="absolute inset-0 h-full w-full object-cover"
-    >
-      <source src="/About-video-1.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </motion.div>
+    <source
+      src="https://res.cloudinary.com/dqxhomda3/video/upload/f_auto,q_auto/v1757443317/About-back_dleeug.mp4"
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+</motion.div>
+
+
 
   {/* Content */}
   <div className="mx-auto flex min-h-screen max-w-6xl flex-col items-center justify-center gap-8 px-4 py-24 text-center">
@@ -300,7 +298,7 @@ const CTA: React.FC = () => (
             </p>
           </div>
           <div className="flex items-center justify-start md:justify-end">
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-2xl bg-neutral-900 px-6 py-3 text-white ring-1 ring-neutral-900/10 transition-transform duration-300 hover:-translate-y-0.5">
+            <a href="https://calendly.com/dreamknotcreations7/15-minute-exploration-call " className="inline-flex items-center gap-2 rounded-2xl bg-neutral-900 px-6 py-3 text-white ring-1 ring-neutral-900/10 transition-transform duration-300 hover:-translate-y-0.5">
               Schedule a Visit <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -638,7 +636,7 @@ export default function AboutDreamKnotCreations() {
           </div>
 
           {/* Footer spacer */}
-          <div className="h-16" />
+          
 
           <style>{`
   :root {

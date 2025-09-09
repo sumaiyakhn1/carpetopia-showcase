@@ -106,7 +106,7 @@ export const Navigation = () => {
           scale: 1.05,
           boxShadow: "0px 6px 18px rgba(228, 213, 183,0.4)",
         }}
-        href="https://calendly.com/dreamknotcreations7/30min"
+        href="https://calendly.com/dreamknotcreations7/15-minute-exploration-call "
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex font-playfair items-center font-bold gap-2 bg-gradient-to-r from-[#36332c] via-[#1d1914] to-[#181613] px-6 py-3 rounded-full shadow-md transition-all text-[#dcd0d0]"

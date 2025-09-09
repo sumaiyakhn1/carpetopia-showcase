@@ -142,7 +142,7 @@ export const Footer = () => {
         scale: 1.05,
         boxShadow: "0px 6px 18px rgba(228, 213, 183,0.4)",
       }}
-      href="https://calendly.com/dreamknotcreations7/30min"
+      href="https://calendly.com/dreamknotcreations7/15-minute-exploration-call "
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex font-playfair items-center font-bold gap-2 bg-gradient-to-r from-[#ddbe80] via-[#d7a168] to-[#c98930] px-6 py-3 rounded-full shadow-md transition-all text-[#2f2f2f]"
