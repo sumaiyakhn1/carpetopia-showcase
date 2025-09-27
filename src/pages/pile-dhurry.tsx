@@ -186,7 +186,7 @@ const Modern = () => {
                     scale: 1,
                   }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  viewport={{ once: false, amount: 0.2 }} // 👈 each card animates when visible
+                  viewport={{ once: false, amount: 0.2 }} 
                   whileHover={{ y: -6 }}
                   className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm border border-gray-200 flex flex-col"
                 >

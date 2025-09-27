@@ -7,13 +7,13 @@ import { Footer } from "@/components/Footer";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { motion } from "framer-motion";
 
-// Rugs Data (thumbnail + zoomImage)
+
 const rugs = [
   {
     id: 1,
     name: "Graphite Hex",
-    image: "/carpet/indo-tibetan/Graphic-hex.webp", // thumbnail
-    zoomImage: "/carpet/indo-tibetan/md8.webp", // zoom version
+    image: "/carpet/indo-tibetan/Graphic-hex.webp", 
+    zoomImage: "/carpet/indo-tibetan/md8.webp", 
     description:
       "With a deep charcoal base and raised interlocking hexagon motifs, this durry creates a bold yet elegant visual impact.",
   },
@@ -45,7 +45,6 @@ const rugs = [
     id: 5,
     name: "Woven Dot Grid",
     image: "/carpet/indo-tibetan/or9.webp",
-   
     description:
       "Combining clean lines and dotted forms, this rug showcases bold structure for contemporary creative interiors.",
   },
@@ -87,6 +86,17 @@ const ZoomModal = ({ image, onClose }) => {
       </div>
     </motion.div>
   );
+};
+
+// Card animation variants
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
 };
 
 const Tufted = () => {
@@ -160,32 +170,16 @@ const Tufted = () => {
             </section>
 
             {/* Rugs Grid */}
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-12"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.2 },
-                },
-              }}
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-12">
               {rugs.map((rug) => (
                 <motion.div
                   key={rug.id}
-                  variants={{
-                    hidden: { opacity: 0, y: 40, scale: 0.95 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      scale: 1,
-                      transition: { duration: 0.6, ease: "easeOut" },
-                    },
-                  }}
-                  whileHover={{ y: -6 }}
                   className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm border border-gray-200 flex flex-col"
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.2 }}
+                  whileHover={{ y: -6 }}
                 >
                   {/* Thumbnail Image */}
                   <motion.div whileHover={{ scale: 1.03 }} className="w-full">
@@ -194,7 +188,7 @@ const Tufted = () => {
                         src={rug.image}
                         alt={rug.name}
                         className="w-full h-full object-cover cursor-zoom-in transition-transform duration-500 hover:scale-105"
-                        onClick={() => setZoomImage(rug.zoomImage || rug.image)} // ✅ use zoomImage
+                        onClick={() => setZoomImage(rug.zoomImage || rug.image)}
                       />
                     </div>
                   </motion.div>
@@ -210,7 +204,7 @@ const Tufted = () => {
                   </div>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

@@ -34,13 +34,12 @@ const rugs = [
   },
   {
     id: 6,
-    name: "Ivory Grid Durry",  
+    name: "Ivory Grid Durry",
     price: "$799",
     image: "/carpet/tufted/Ivory-grid-carpet.jpg",
     description:
       "This durry features a raised geometric grid in soft ivory tones, combining depth with a light, airy appearance. The texture creates a play of light and shadow, offering a sophisticated touch to neutral interiors and calm spaces.",
   },
-  
 ];
 
 // Zoom Modal Component
@@ -81,6 +80,12 @@ const ZoomModal = ({ image, onClose }) => {
   );
 };
 
+// Card animation variants
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
 const Tufted = () => {
   const [zoomImage, setZoomImage] = useState(null);
 
@@ -90,125 +95,102 @@ const Tufted = () => {
       <Navigation />
       <StickyMenu />
       <main>
-       
-
         <section className="py-40">
           <div className="container mx-auto px-4">
-            {/* Heading */}
-          {/* Hero Section */}
-<section className="relative min-h-[45vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream-100 via-cream-200 to-brown-200">
-  {/* Animated gradient overlay */}
-  <motion.div
-    className="absolute inset-0 bg-gradient-to-tr from-brown-200/30 via-transparent to-cream-300/40"
-    animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
-    transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-    style={{ backgroundSize: "200% 200%" }}
-  />
+            {/* Hero Section */}
+            <section className="relative min-h-[45vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-cream-100 via-cream-200 to-brown-200">
+              {/* Animated gradient overlay */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-tr from-brown-200/30 via-transparent to-cream-300/40"
+                animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                style={{ backgroundSize: "200% 200%" }}
+              />
 
-  {/* Floating glowing orbs */}
-  <motion.div
-    className="absolute top-20 left-12 w-44 h-44 bg-brown-400/30 rounded-full blur-3xl"
-    animate={{ y: [0, 40, 0], x: [0, 20, 0] }}
-    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-  />
-  <motion.div
-    className="absolute bottom-16 right-20 w-72 h-72 bg-cream-400/40 rounded-full blur-3xl"
-    animate={{ y: [0, -50, 0], x: [0, -30, 0] }}
-    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-  />
+              {/* Floating glowing orbs */}
+              <motion.div
+                className="absolute top-20 left-12 w-44 h-44 bg-brown-400/30 rounded-full blur-3xl"
+                animate={{ y: [0, 40, 0], x: [0, 20, 0] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute bottom-16 right-20 w-72 h-72 bg-cream-400/40 rounded-full blur-3xl"
+                animate={{ y: [0, -50, 0], x: [0, -30, 0] }}
+                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+              />
 
-  {/* Content */}
-  <motion.div
-    className="relative z-10 container mx-auto px-6 text-center"
-    initial={{ opacity: 0, y: 60 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-  >
-    <motion.h1
-      className="font-playfair text-5xl md:text-6xl  mb-6 tracking-tight text-brown-900 drop-shadow-lg"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1.2, delay: 0.2 }}
-    >
-      Tufted Carpets
-    </motion.h1>
+              {/* Content */}
+              <motion.div
+                className="relative z-10 container mx-auto px-6 text-center"
+                initial={{ opacity: 0, y: 60 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <motion.h1
+                  className="font-playfair text-5xl md:text-6xl mb-6 tracking-tight text-brown-900 drop-shadow-lg"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1.2, delay: 0.2 }}
+                >
+                  Tufted Carpets
+                </motion.h1>
 
-    <motion.p
-      className="max-w-2xl mx-auto italic text-lg md:text-xl text-brown-700 leading-relaxed"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.2, delay: 0.5 }}
-    >
-      Soft textures, bold designs, and timeless craftsmanship.  
-      Discover the perfect balance of comfort and artistry in our Tufted Collection.
-    </motion.p>
+                <motion.p
+                  className="max-w-2xl mx-auto italic text-lg md:text-xl text-brown-700 leading-relaxed"
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1.2, delay: 0.5 }}
+                >
+                  Soft textures, bold designs, and timeless craftsmanship. Discover the perfect balance of comfort and artistry in our Tufted Collection.
+                </motion.p>
 
-    <motion.button
-      className="mt-8 px-8 py-3 cursor-default rounded-full bg-brown-800 text-cream-500 font-semibold text-lg shadow-xl hover:bg-brown-900 transition-all"
-      whileHover={{ scale: 1.1, boxShadow: "0px 0px 25px rgba(120,72,40,0.6)" }}
-      whileTap={{ scale: 0.95 }}
-    >
-      Explore Collection
-    </motion.button>
-  </motion.div>
-</section>
+                <motion.button
+                  className="mt-8 px-8 py-3 cursor-default rounded-full bg-brown-800 text-cream-500 font-semibold text-lg shadow-xl hover:bg-brown-900 transition-all"
+                  whileHover={{ scale: 1.1, boxShadow: "0px 0px 25px rgba(120,72,40,0.6)" }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Explore Collection
+                </motion.button>
+              </motion.div>
+            </section>
 
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-16">
+              {rugs.map((rug) => (
+                <motion.div
+                  key={rug.id}
+                  className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm border border-gray-200 flex flex-col"
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.2 }}
+                  whileHover={{ y: -6 }}
+                >
+                  {/* Image wrapper with aspect ratio */}
+                  <motion.div whileHover={{ scale: 1.03 }} className="w-full">
+                    <div className="aspect-[4/3] w-full overflow-hidden">
+                      <img
+                        src={rug.image}
+                        alt={rug.name}
+                        className="w-full h-full object-cover cursor-zoom-in transition-transform duration-500 hover:scale-105"
+                        onClick={() => setZoomImage(rug.image)}
+                      />
+                    </div>
+                  </motion.div>
 
-            {/* Grid */}
-            {/* Grid */}
-<motion.div
-  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.2 }}
-  variants={{
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.2 },
-    },
-  }}
->
-  {rugs.map((rug) => (
-    <motion.div
-      key={rug.id}
-      variants={{
-        hidden: { opacity: 0, y: 40, scale: 0.95 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          transition: { duration: 0.6, ease: "easeOut" },
-        },
-      }}
-      whileHover={{ y: -6 }}
-      className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm border border-gray-200 flex flex-col"
-    >
-      {/* Image wrapper with aspect ratio */}
-      <motion.div whileHover={{ scale: 1.03 }} className="w-full">
-        <div className="aspect-[4/3] w-full overflow-hidden">
-          <img
-            src={rug.image}
-            alt={rug.name}
-            className="w-full h-full object-cover cursor-zoom-in transition-transform duration-500 hover:scale-105"
-            onClick={() => setZoomImage(rug.image)}
-          />
-        </div>
-      </motion.div>
-
-      {/* Text */}
-      <div className="p-4 sm:p-5 flex flex-col flex-grow">
-        <h2 className="text-base sm:text-lg font-semibold text-gray-800">
-          {rug.name}
-        </h2>
-        <p className="text-sm mt-2 text-gray-600 leading-relaxed line-clamp-3">
-          {rug.description}
-        </p>
-        <p className="mt-3 text-md font-medium text-gray-900">{}</p>
-      </div>
-    </motion.div>
-  ))}
-</motion.div>
-
+                  {/* Text */}
+                  <div className="p-4 sm:p-5 flex flex-col flex-grow">
+                    <h2 className="text-base sm:text-lg font-semibold text-gray-800">
+                      {rug.name}
+                    </h2>
+                    <p className="text-sm mt-2 text-gray-600 leading-relaxed line-clamp-3">
+                      {rug.description}
+                    </p>
+                    <p className="mt-3 text-md font-medium text-gray-900">{rug.price}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
