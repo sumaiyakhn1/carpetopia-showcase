@@ -11,7 +11,7 @@ const rugs = [
   {
     id: 1,
     name: "Monochrome Wave Durry",
-    price: "$299",
+    price: "₹299",
     image: "/carpet/tufted/tufted-image-1.jpg",
     description:
       "This durry features a soft monochromatic palette of grey and white with a repeating wave-like checkered pattern. The plush texture and visual rhythm add a cozy and contemporary feel to any living space, ideal for modern and minimalist interiors.",
@@ -19,7 +19,7 @@ const rugs = [
   {
     id: 3,
     name: "Ash Line Grid Durry",
-    price: "$499",
+    price: "₹499",
     image: "/carpet/tufted/Tufted-ash-carpet.jpg",
     description:
       "Subtle yet striking, this durry is woven in light ash grey with fine, linear patterns forming large overlapping geometric shapes. Its soft surface and understated design offer an elegant, airy look—suitable for contemporary, Scandinavian-inspired interiors.",
@@ -27,7 +27,7 @@ const rugs = [
   {
     id: 4,
     name: "Frosted Maze Durry",
-    price: "$599",
+    price: "₹599",
     image: "/carpet/tufted/Frosted-image-carpet.jpg",
     description:
       "Showcasing a modern maze-like design in a frosty silver-grey hue, this durry blends clean linear cuts with a smooth matte texture. Its crisp and symmetrical pattern adds a refined, structured element to any space, ideal for minimalist or Scandinavian-inspired interiors.",
@@ -35,7 +35,7 @@ const rugs = [
   {
     id: 6,
     name: "Ivory Grid Durry",
-    price: "$799",
+    price: "₹799",
     image: "/carpet/tufted/Ivory-grid-carpet.jpg",
     description:
       "This durry features a raised geometric grid in soft ivory tones, combining depth with a light, airy appearance. The texture creates a play of light and shadow, offering a sophisticated touch to neutral interiors and calm spaces.",
