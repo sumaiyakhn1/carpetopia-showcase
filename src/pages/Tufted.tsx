@@ -186,7 +186,7 @@ const Tufted = () => {
                     <p className="text-sm mt-2 text-gray-600 leading-relaxed line-clamp-3">
                       {rug.description}
                     </p>
-                    <p className="mt-3 text-md font-medium text-gray-900">{rug.price}</p>
+                    
                   </div>
                 </motion.div>
               ))}
